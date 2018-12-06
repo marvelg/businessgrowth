@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+
+{% block links %}
+<link href="https://fonts.googleapis.com/css?family=Bellefair|Open+Sans" rel="stylesheet">
+<link rel="stylesheet" href="css/styles-merged.css">
+<link rel="stylesheet" href="css/style.min.css">
+<link rel="stylesheet" href="css/blog.css">
+<link rel="stylesheet" href="css/custom.css">
+<script src="js/jqueryscript.js"></script>
+{% endblock %}
+
+{% block content%}
+<section class="flexslider">
+    <ul class="slides">
+        <li style="background-image: url(img/slider_1.jpg)" class="overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="probootstrap-slider-text text-center">
+                            <h1 class="probootstrap-heading">Blog</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</section>
+
+<section class="probootstrap-section probootstrap-bg-white ">
+    <div class="container">
+        <div class="row probootstrap-animate">
+            <div class="blog col-md-6">
+                <a href="post.html" target="_blank">
+                    <img src="img/gal_img_sm_2.jpg" alt="" class="img-fluid">
+                </a>
+                <div class="d-flex justify-content-between">
+                    <div class="blogDate">20 May | 2016</div>
+                    <div class="blogCategory">BUSINESS</div>
+                </div>
+                <a href="post.html" target="_blank">
+                    <h3 class="blogTitle">Alberto Savoia Can Teach You About Interior</h3>
+                </a>
+                <p class="text-muted blogSummary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                    eiusmod
+                    tempor incididunt ut labore.</p>
+                <footer class="d-flex blogFooter align-items-center">
+                    <div class="avatar"><img src="img/avatar-1.jpg" class="img-fluid"></div>
+                    <div class="blogEditor">John Doe</div>
+                </footer>
+            </div>
+            <div class="blog col-md-6">
+                <a href="#">
+                    <img src="img/gal_img_sm_2.jpg" alt="" class="img-fluid">
+                </a>
+                <div class="d-flex justify-content-between">
+                    <div class="blogDate">20 May | 2016</div>
+                    <div class="blogCategory">BUSINESS</div>
+                </div>
+                <a href="#">
+                    <h3 class="blogTitle">Alberto Savoia Can Teach You About Interior</h3>
+                </a>
+                <p class="text-muted blogSummary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                    eiusmod
+                    tempor incididunt ut labore.</p>
+                <footer class="d-flex blogFooter align-items-center">
+                    <div class="avatar"><img src="img/avatar-1.jpg" class="img-fluid"></div>
+                    <div class="blogEditor">John Doe</div>
+                </footer>
+            </div>
+        </div>
+        <!-- END row -->
+        <div class="row probootstrap-animate">
+            <div class="blog col-md-6">
+                <a href="#">
+                    <img src="img/gal_img_sm_2.jpg" alt="" class="img-fluid">
+                </a>
+                <div class="d-flex justify-content-between">
+                    <div class="blogDate">20 May | 2016</div>
+                    <div class="blogCategory">BUSINESS</div>
+                </div>
+                <a href="#">
+                    <h3 class="blogTitle">Alberto Savoia Can Teach You About Interior</h3>
+                </a>
+                <p class="text-muted blogSummary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                    eiusmod
+                    tempor incididunt ut labore.</p>
+                <footer class="d-flex blogFooter align-items-center">
+                    <div class="avatar"><img src="img/avatar-1.jpg" class="img-fluid"></div>
+                    <div class="blogEditor">John Doe</div>
+                </footer>
+            </div>
+            <div class="blog col-md-6">
+                <a href="#">
+                    <img src="img/gal_img_sm_2.jpg" alt="" class="img-fluid">
+                </a>
+                <div class="d-flex justify-content-between">
+                    <div class="blogDate">20 May | 2016</div>
+                    <div class="blogCategory">BUSINESS</div>
+                </div>
+                <a href="#">
+                    <h3 class="blogTitle">Alberto Savoia Can Teach You About Interior</h3>
+                </a>
+                <p class="text-muted blogSummary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                    eiusmod
+                    tempor incididunt ut labore.</p>
+                <footer class="d-flex blogFooter align-items-center">
+                    <div class="avatar"><img src="img/avatar-1.jpg" class="img-fluid"></div>
+                    <div class="blogEditor">John Doe</div>
+                </footer>
+            </div>
+        </div>
+        <div class="row probootstrap-animate">
+            <div class="col-md-12">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination pagination-template d-flex justify-content-center">
+                        <li class="page-item"><a href="#" class="page-link"> <img src="img/left-arrow.png" alt="" style="width:12px; height:auto"></a></li>
+                        <li class="page-item"><a href="#" class="page-link">1</a></li>
+                        <li class="page-item"><a href="#" class="page-link">2</a></li>
+                        <li class="page-item"><a href="#" class="page-link">3</a></li>
+                        <li class="page-item"><a href="#" class="page-link"> <img src="img/right-arrow.png" alt=""
+                                    style="width:12px; height:auto"></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="js/scripts.min.js"></script>
+<script src="js/custom.min.js"></script>
+<script src="js/blog.js"></script>
+{% endblock %}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Business Growth</title>
+    <meta name="description" content="Free Bootstrap Theme by uicookies.com">
+    <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+
+    {% block links %}
+
+    {% endblock %}
+</head>
+
+<body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top probootstrap-navbar ">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"
+                    aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand navbarlogo" href="index.html">FineOak</a>
+            </div>
+
+            <div id="navbar-collapse" class="navbar-collapse collapse headnavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Pages</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="portfolio.html">Portfolio</a></li>
+                            <li><a href="portfolio-single.html">Portfolio Single</a></li>
+                            <li class="dropdown-submenu dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span>Sub Menu</span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Second Level Menu</a></li>
+                                    <li><a href="#">Second Level Menu</a></li>
+                                    <li><a href="#">Second Level Menu</a></li>
+                                    <li><a href="#">Second Level Menu</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="services.html">Services</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {%block content%}
+    {%endblock%}
+    
+    <footer class="probootstrap-footer ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <p>GET CONNECTED</p>
+                    <ul class="probootstrap-footer-social">
+                        <li><a href="#"><i class="icon-twitter"></i></a></li>
+                        <li><a href="#"><i class="icon-facebook"></i></a></li>
+                        <li><a href="#"><i class="icon-github"></i></a></li>
+                    </ul>
+                    <img src="img/logo-unscrolled.png" style="width: 100%; height:auto">
+                </div>
+                <div class="col-md-4">
+                    <p>OUR OFFICE</p>
+                    <p>BusinessGrowth - Head Office
+                        Jl. Bukit Gading Raya,
+                        Kompleks Gading Bukit Indah Blok V-7,
+                        Kelapa Gading, Jakarta Utara 14240,
+                        Indonesia</p>
+                </div>
+                <div class="col-md-4">
+                    <p>WORKING HOURS</p>
+                    <p><span style="color:red">Office</span> : +62 21 29578599 (Hunting)<br>
+
+                        <span style="color:red">Mobile</span> : +62 82111997750<br>
+
+                        <span style="color:red">Email</span> : info@businessgrowthcorp.com<br>
+
+                        <span style="color:red">Working Hours</span> : 8:00 a.m - 17:00 p.m</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    {% block scripts %}
+
+    {% endblock %}
+</body>
+
+</html>
