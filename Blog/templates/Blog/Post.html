@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
-
+{% load staticfiles %}
 {% block links %}
-<link rel="stylesheet" href="css/blog.css">
-<script src="js/jqueryscript.js"></script>
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+<script src="{% static 'js/jqueryscript.js' %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -58,7 +58,7 @@
                     <div class="posts-nav d-flex justify-content-between align-items-stretch flex-column flex-md-row blogpost probootstrap-animate">
                         <a href="#" class="prev-post text-left d-flex align-items-center">
                             <div class="icon prev ">
-                                <img src="img/left-arrow.png" alt="" style="width:12px;height:auto">
+                                <img src="{% static 'img/left-arrow.png' %}" alt="" style="width:12px;height:auto">
                             </div>
                             <div class="text">
                                 <strong class="text-primary">Previous Post </strong>
@@ -70,7 +70,7 @@
                                 <h6>I Bought a Wedding Dress.</h6>
                             </div>
                             <div class="icon next">
-                                <img src="img/right-arrow.png" alt="" style="width:12px;height:auto">
+                                <img src="{% static 'img/right-arrow.png' %}" alt="" style="width:12px;height:auto">
                             </div>
                         </a>
                     </div>
@@ -126,5 +126,5 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="js/blog.js"></script>
+<script src="{% static 'js/blog.js' %}"></script>
 {% endblock %}

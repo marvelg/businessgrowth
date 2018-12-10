@@ -1,7 +1,7 @@
 {% extends 'base.html'%}
-
+{% load staticfiles %}
 {% block links %}
-<script src="js/jqueryscript.js"></script>
+<script src="{% static 'js/jqueryscript.js' %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -179,6 +179,6 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="js/lightbox.js"></script>
+<script src="{% static 'js/lightbox.js' %}"></script>
 
 {% endblock %}

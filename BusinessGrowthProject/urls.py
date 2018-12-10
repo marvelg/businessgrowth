@@ -18,8 +18,20 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 import Home.views
+import About.views
+import Clients.views
+import Contact.views
+import Gallery.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',Home.views.home, name = "Home"),
+    path('bio/',Home.views.bio, name = "Bio"),
+    path('about/', About.views.about, name = "About"),
+    path('blog/', include('Blog.urls')),
+    path('clients/', Clients.views.clients, name = "Clients"),
+    path('testimonials/', Clients.views.testimonials, name = "Testimonials"),
+    path('contact/', Contact.views.contact, name = "Contact"),
+    path('gallery/', Gallery.views.gallery, name = "Gallery"),
+    path('services/', include('Services.urls')),
 
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
