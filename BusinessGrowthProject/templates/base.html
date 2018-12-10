@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
+{% load staticfiles %}
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Business Growth</title>
-    <meta name="description" content="Free Bootstrap Theme by uicookies.com">
-    <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
+    <meta name="description" content=" ">
+    <meta name="keywords" content=" ">
     <link href="https://fonts.googleapis.com/css?family=Bellefair|Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles-merged.css">
-    <link rel="stylesheet" href="css/style.min.css">
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="{% static 'css/styles-merged.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     {% block links %}
 
     {% endblock %}
@@ -65,7 +65,7 @@
                         <li><a href="#"><i class="icon-facebook"></i></a></li>
                         <li><a href="#"><i class="icon-github"></i></a></li>
                     </ul>
-                    <img src="img/logo-unscrolled.png" style="width: 100%; height:auto">
+                    <img src="{% static 'img/logo-unscrolled.png' %}" style="width: 100%; height:auto">
                 </div>
                 <div class="col-md-4">
                     <p>OUR OFFICE</p>
@@ -88,8 +88,8 @@
             </div>
         </div>
     </footer>
-    <script src="js/scripts.min.js"></script>
-    <script src="js/custom.min.js"></script>
+    <script src="{% static 'js/scripts.min.js' %}"></script>
+    <script src="{%static 'js/custom.min.js' %}"></script>
     {% block scripts %}
 
     {% endblock %}

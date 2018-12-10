@@ -1,0 +1,264 @@
+.img-fluid {
+    height: auto;
+    width: 100%
+}
+
+.flex-column {
+    flex-direction: column !important
+}
+
+@media (min-width:768px) {
+    .flex-md-row {
+        flex-direction: row !important
+    }
+}
+
+@media (max-width: 767px) {
+    .posts-nav a {
+        width: 100% !important;
+    }
+}
+
+.justify-content-between {
+    justify-content: space-between !important;
+    margin-top: 8px
+}
+
+.justify-content-center {
+    justify-content: center !important
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.justify-content-between .blogCategory {
+    text-decoration: none;
+    color: #9999A2;
+    font-weight: 700;
+}
+
+.blogTitle {
+    color: #222;
+    font-weight: 900;
+    font-family: "Open Sans", sans-serif;
+    font-size: 25px;
+    margin-top: 5px
+}
+
+.blogSummary {
+    margin-bottom: 15px
+}
+
+.blog {
+    margin-bottom: 50px
+}
+
+.blogFooter .avatar {
+    max-width: 40px;
+    min-width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.blogEditor {
+    font-weight: 400;
+    color: #999;
+    text-transform: capitalize;
+    display: inline-block
+}
+
+.align-items-center {
+    align-items: center !important
+}
+
+.pagination {
+    padding-left: 0;
+    list-style: none;
+    border-radius: .25rem
+}
+
+.pagination-template li.page-item {
+    margin: 0 5px
+}
+
+.pagination-template a.page-link {
+    width: 40px;
+    height: 40px;
+    line-height: 27px;
+    border-radius: 50% !important;
+    border: none;
+    color: #555;
+    text-align: center;
+}
+
+.pagination-template a.page-link.active {
+    background: #eee
+}
+
+/* POST */
+.post-details .blogCategory {
+    color: #999;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.post-body {
+    margin-top: 40px
+}
+
+.post-body p:not(.lead) {
+    font-size: 15px;
+    line-height: 28px;
+    color: #555;
+}
+
+
+
+@media (min-width: 760px) and (max-width:1200px) , (max-width:425px){
+    .thumbnailImage{
+        margin-top:45px
+    }
+}
+
+
+
+.post-tags .tag {
+    padding: 5px 25px;
+    border: 1px solid #ddd;
+    margin: 5px;
+    color: #777;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    pointer-events: none;
+    cursor: default;
+
+}
+
+
+
+.blogpost.posts-nav {
+    margin-top: 50px;
+    color: #777;
+    font-size: 0.8em;
+}
+
+.blogpost .align-items-stretch {
+    align-items: stretch;
+}
+
+.blogpost a {
+    width: calc(50% - 10px);
+    padding: 10px 20px;
+    border: 1px solid #eee;
+    margin-bottom: 15px;
+}
+
+.blogpost .icon {
+    min-width: 35px;
+    max-width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    line-height: 32px;
+    border: 1px solid #ddd;
+    color: #aaa;
+    font-size: 1.5em;
+    text-align: center;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.blogpost .icon.prev {
+    margin-right: 20px;
+}
+
+.blogpost .icon.next {
+    margin-left: 20px;
+}
+
+.blogpost h6 {
+    font-weight: 700;
+    font-size: 18px;
+    font-family: "Open Sans", sans-serif;
+    margin-top: 0px;
+    margin-bottom: 5px
+}
+
+.blogpost .text .text-primary {
+    font-size: 14px
+}
+
+.blogpost .justify-content-end {
+    justify-content: flex-end !important
+}
+
+.blogpost a:hover {
+    border-color: #999
+}
+
+.blogpost a:hover .icon {
+    background: #999;
+    border-color: #999;
+}
+
+
+.widget {
+    margin-bottom: 40px;
+    padding: 30px;
+    border: 1px solid #eee;
+}
+
+.widget.latest-posts .item {
+    margin-bottom: 20px;
+}
+
+.widget header {
+    margin-bottom: 20px
+}
+
+.widget.latest-posts .image {
+    min-width: 60px;
+    max-width: 60px;
+    height: 60px;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.widget.latest-posts strong {
+    font-size: 16px;
+    display: block;
+    line-height: 17px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.widget.latest-posts .item:hover strong {
+    color: #e60202
+}
+
+
+
+.widget.tags .tag {
+    padding: 5px 25px;
+    border: 1px solid #ddd;
+    margin: 5px 0;
+    color: #777;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 800;
+    text-decoration: none;
+    border-radius: 50px;
+    pointer-events: none;
+    cursor: default;
+
+}
+
+.widget.tags .list-inline-item {
+    margin-bottom: 10px
+}
