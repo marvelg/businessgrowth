@@ -7,7 +7,10 @@
     <title>Business Growth</title>
     <meta name="description" content="Free Bootstrap Theme by uicookies.com">
     <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
-
+    <link href="https://fonts.googleapis.com/css?family=Bellefair|Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles-merged.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="css/custom.css">
     {% block links %}
 
     {% endblock %}
@@ -37,21 +40,10 @@
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Pages</a>
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Clients</a>
                         <ul class="dropdown-menu">
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="portfolio.html">Portfolio</a></li>
-                            <li><a href="portfolio-single.html">Portfolio Single</a></li>
-                            <li class="dropdown-submenu dropdown">
-                                <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span>Sub Menu</span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Second Level Menu</a></li>
-                                    <li><a href="#">Second Level Menu</a></li>
-                                    <li><a href="#">Second Level Menu</a></li>
-                                    <li><a href="#">Second Level Menu</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="services.html">Services</a></li>
+                            <li><a href="client.html">Client List</a></li>
+                            <li><a href="testimonials.html">Testimonials</a></li>
                         </ul>
                     </li>
                     <li><a href="contact.html">Contact</a></li>
@@ -62,7 +54,7 @@
 
     {%block content%}
     {%endblock%}
-    
+
     <footer class="probootstrap-footer ">
         <div class="container">
             <div class="row">
@@ -96,6 +88,8 @@
             </div>
         </div>
     </footer>
+    <script src="js/scripts.min.js"></script>
+    <script src="js/custom.min.js"></script>
     {% block scripts %}
 
     {% endblock %}
