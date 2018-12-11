@@ -52,16 +52,16 @@
 <section class="probootstrap-section probootstrap-bg-white">
     <div class="container">
         <div class="row">
+            {% for Welcome in Welcome.all %}
             <div class="col-md-6 probootstrap-animate">
-                <h2 class="mb0">Welcome To BusinessGrowth</h2>
-                <p class="lead mt0">Your professional learning partner!</p>
-                <img class="img-fluid welcomeImage" src="{% static 'img/test1.jpg' %}">
+                <h2 class="mb0">{{ Welcome.title }}</h2>
+                <p class="lead mt0">{{ Welcome.subTitle }}</p>
+                <img class="img-fluid welcomeImage" src="{{ Welcome.image.url }}">
             </div>
             <div class="col-md-6 probootstrap-animate mt30">
-                {% for Home in Home.all %}
-                    {{ Home.text | safe }}
-                {% endfor %}
+                {{ Welcome.text | safe }}
             </div>
+            {% endfor %}
         </div>
     </div>
 </section>

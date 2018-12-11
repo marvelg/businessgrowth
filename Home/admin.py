@@ -1,6 +1,10 @@
 from django.contrib import admin
 
-from .models import Home
+from .models import Welcome
 
 # Register your models here.
-admin.site.register(Home)
+class noAdd(admin.ModelAdmin):
+     def has_add_permission(self, request):
+        return False
+admin.site.register(Welcome, noAdd)
+
