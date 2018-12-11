@@ -44,7 +44,12 @@ INSTALLED_APPS = [
     'Gallery.apps.GalleryConfig',
     'Home.apps.HomeConfig',
     'Services.apps.ServicesConfig',
+    'Base.apps.BaseConfig',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -61,7 +66,7 @@ ROOT_URLCONF = 'BusinessGrowthProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['BusinessGrowthProject/templates'],
+        'DIRS': ['Base/templates/Base'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
