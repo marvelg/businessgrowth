@@ -33,5 +33,6 @@ urlpatterns = [
     path('contact/', Contact.views.contact, name = "Contact"),
     path('gallery/', Gallery.views.gallery, name = "Gallery"),
     path('services/', include('Services.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

@@ -58,20 +58,9 @@
                 <img class="img-fluid welcomeImage" src="{% static 'img/test1.jpg' %}">
             </div>
             <div class="col-md-6 probootstrap-animate mt30">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid dolorum saepe magnam natus
-                    perferendis
-                    corrupti tenetur quidem suscipit eaque blanditiis corporis veniam molestias qui culpa veritatis
-                    officiis
-                    eum. Doloribus quos minus quas reprehenderit! Ad provident sunt totam culpa tenetur? Libero maxime
-                    molestiae cumque excepturi. </p>
-                <p>Eveniet tempora a nisi aut debitis! Recusandae dolores vero autem expedita nihil asperiores maxime
-                    modi
-                    ducimus nemo dicta nulla dolore? Inventore necessitatibus non laboriosam eos quod dignissimos
-                    soluta sunt
-                    id fugiat debitis nam omnis? A ullam minima excepturi nulla totam necessitatibus illum modi
-                    exercitationem
-                    blanditiis quaerat at fugit ad eveniet ipsum error quod sit cumque impedit!</p>
-
+                {% for Home in Home.all %}
+                    {{ Home.text | safe }}
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -264,7 +253,8 @@
             </div>
             <div class="col-md-6">
                 <div class="service left-icon probootstrap-animate">
-                    <div class="icon"><img src="{% static 'img/presentation.png' %}" style="width:50px; height:auto" alt=""></div>
+                    <div class="icon"><img src="{% static 'img/presentation.png' %}" style="width:50px; height:auto"
+                            alt=""></div>
                     <div class="text">
                         <h3>Laboriosam Quod Dignissimos</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore
@@ -284,7 +274,8 @@
             </div>
             <div class="col-md-6">
                 <div class="service left-icon probootstrap-animate">
-                    <div class="icon"><img src="{% static 'img/presentation.png' %}" style="width:50px; height:auto" alt=""></div>
+                    <div class="icon"><img src="{% static 'img/presentation.png' %}" style="width:50px; height:auto"
+                            alt=""></div>
                     <div class="text">
                         <h3>Laboriosam Quod Dignissimos</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore
@@ -304,7 +295,8 @@
             </div>
             <div class="col-md-6">
                 <div class="service left-icon probootstrap-animate">
-                    <div class="icon"><img src="{% static 'img/presentation.png' %}" style="width:50px; height:auto" alt=""></div>
+                    <div class="icon"><img src="{% static 'img/presentation.png' %}" style="width:50px; height:auto"
+                            alt=""></div>
                     <div class="text">
                         <h3>Laboriosam Quod Dignissimos</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore
