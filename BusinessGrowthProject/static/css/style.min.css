@@ -135,7 +135,8 @@ a:hover {
     border-radius: 0;
     margin-bottom: 0;
     -webkit-transition: .3s all;
-    transition: .3s all
+    transition: .3s all;
+    background : 0 0
 }
 
 @media screen and (max-width:768px) {
@@ -381,7 +382,8 @@ only screen and (min-resolution:2dppx) {
 
 .probootstrap-navbar .navbar-nav>li>a {
     font-size: 15px;
-    position: relative
+    position: relative;
+    color:#fff
 }
 
 @media screen and (max-width:768px) {

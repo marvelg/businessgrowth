@@ -89,9 +89,7 @@ a.team:hover {
 
 /* light box ABOUT css */
 
-body {
-    padding: 30px 0px;
-}
+
 
 #lightbox .modal-content-lightbox {
     display: inline-block;

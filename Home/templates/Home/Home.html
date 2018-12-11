@@ -10,43 +10,19 @@
 {% block content%}
 <section class="flexslider">
     <ul class="slides">
-        <li style="background-image: url({% static 'img/slider_1.jpg' %})" class="overlay">
+        {% for Slider in Slider.all %}
+        <li style="background-image: url({{ Slider.image.url }})" class="overlay">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="probootstrap-slider-text text-center">
-                            <h1 class="probootstrap-heading probootstrap-animate">Bringing Style And Comfort For
-                                Customer
-                                Satisfaction</h1>
+                            <h1 class="probootstrap-heading probootstrap-animate">{{ Slider.text }}</h1>
                         </div>
                     </div>
                 </div>
             </div>
         </li>
-        <li style="background-image: url({% static 'img/slider_2.jpg' %})" class="overlay">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <div class="probootstrap-slider-text text-center">
-                            <h1 class="probootstrap-heading probootstrap-animate">Affordable Solutions For Better
-                                Living</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </li>
-        <li style="background-image: url({% static 'img/slider_3.jpg' %})" class="overlay">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <div class="probootstrap-slider-text text-center">
-                            <h1 class="probootstrap-heading probootstrap-animate">We Bring Ideas To Life</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </li>
+        {% endfor %}
     </ul>
 </section>
 <section class="probootstrap-section probootstrap-bg-white">
@@ -54,7 +30,7 @@
         <div class="row">
             {% for Welcome in Welcome.all %}
             <div class="col-md-6 probootstrap-animate">
-                <h2 class="mb0">{{ Welcome.title }}</h2>
+                <h2 class="mb15">{{ Welcome.title }}</h2>
                 <p class="lead mt0">{{ Welcome.subTitle }}</p>
                 <img class="img-fluid welcomeImage" src="{{ Welcome.image.url }}">
             </div>
@@ -74,86 +50,25 @@
         </div>
         <!-- END row -->
         <div class="row">
+            {% for bestService in bestService.all %}
             <div class="col-md-6">
                 <a href="product.html" class="productLink">
                     <div class="zoom">
                         <div class="probootstrap-service-2 probootstrap-animate">
                             <div class="image">
                                 <div class="image-bg">
-                                    <img src="{% static 'img/img_sm_1.jpg' %}" alt="">
+                                    <img src="{{ bestService.image.url }}" alt="">
                                 </div>
                             </div>
                             <div class="text">
-                                <h3>LEADERSHIP</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam pariatur modi
-                                    praesentium
-                                    deleniti
-                                    molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
+                                <h3>{{ bestService.title }}</h3>
+                                <p>{{ bestService.description }}</p>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col-md-6">
-                <a href="product.html" class="productLink">
-                    <div class="zoom">
-                        <div class="probootstrap-service-2 probootstrap-animate">
-                            <div class="image">
-                                <div class="image-bg">
-                                    <img src="{% static 'img/img_sm_1.jpg' %}" alt="">
-                                </div>
-                            </div>
-                            <div class="text">
-                                <h3>HUMAN RESOURCES</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam pariatur modi
-                                    praesentium
-                                    deleniti
-                                    molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6">
-                <a href="product.html" class="productLink">
-                    <div class="zoom">
-                        <div class="probootstrap-service-2 probootstrap-animate">
-                            <div class="image">
-                                <div class="image-bg">
-                                    <img src="{% static 'img/img_sm_1.jpg' %}" alt="">
-                                </div>
-                            </div>
-                            <div class="text">
-                                <h3>LEADERSHIP</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam pariatur modi
-                                    praesentium
-                                    deleniti
-                                    molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6">
-                <a href="product.html" class="productLink">
-                    <div class="zoom">
-                        <div class="probootstrap-service-2 probootstrap-animate">
-                            <div class="image">
-                                <div class="image-bg">
-                                    <img src="{% static 'img/img_sm_1.jpg' %}" alt="">
-                                </div>
-                            </div>
-                            <div class="text">
-                                <h3>HUMAN RESOURCES</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam pariatur modi
-                                    praesentium
-                                    deleniti
-                                    molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            {% endfor %}
         </div>
         <div class="row">
             <div class="col-md-12 text-center">
