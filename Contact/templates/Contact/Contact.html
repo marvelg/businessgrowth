@@ -50,21 +50,14 @@
             </div>
             <div class="col-md-6 col-md-push-1 probootstrap-animate">
 
-
-                <h4>USA</h4>
+                {% for Contact in Contact.all %}
+                <h4>{{ Contact.city }}</h4>
                 <ul class="probootstrap-contact-info">
-                    <li><i class="icon-pin"></i> <span>198 West 21th Street, Suite 721 New York NY 10016</span></li>
-                    <li><i class="icon-email"></i><span>info@domain.com</span></li>
-                    <li><i class="icon-phone"></i><span>+123 456 7890</span></li>
+                    <li><i class="icon-pin"></i> <span>{{Contact.location}}</span></li>
+                    <li><i class="icon-email"></i><span>{{Contact.email}}</span></li>
+                    <li><i class="icon-phone"></i><span>{{Contact.number}}</span></li>
                 </ul>
-
-                <h4>Europe</h4>
-                <ul class="probootstrap-contact-info">
-                    <li><i class="icon-pin"></i> <span>198 West 21th Street, Suite 721 New York NY 10016</span></li>
-                    <li><i class="icon-email"></i><span>info@domain.com</span></li>
-                    <li><i class="icon-phone"></i><span>+123 456 7890</span></li>
-                </ul>
-
+                {% endfor %}
             </div>
         </div>
     </div>

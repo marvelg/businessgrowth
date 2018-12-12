@@ -1,5 +1,6 @@
 from django.shortcuts import render
-
+from .models import Contact
 # Create your views here.
 def contact(request):
-    return render(request, "Contact/Contact.html")
+    contact = Contact.objects
+    return render(request, "Contact/Contact.html", {"Contact" : contact})
