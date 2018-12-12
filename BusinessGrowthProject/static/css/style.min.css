@@ -333,7 +333,7 @@ a:hover {
     padding-bottom: 0 !important;
     font-size: 30px;
     text-transform: uppercase;
-    background: url(../img/logo.png) left top no-repeat;
+    background: url(../img/logo-unscrolled.png) left top no-repeat;
     top: 30px;
     position: relative;
     width: 117px;
@@ -342,6 +342,10 @@ a:hover {
     -webkit-transition: .2s all;
     transition: .2s all
 }
+.probootstrap-navbar.scrolled .navbar-brand {
+    background: url(../img/logo.png) left top no-repeat;
+}
+
 
 @media screen and (max-width:768px) {
     .probootstrap-navbar .navbar-brand {

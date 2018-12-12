@@ -89,32 +89,21 @@
             </div>
         </div>
         <div class="row probootstrap-animate">
+            {% for Founder in Founder.all %}
             <div class="col-md-6">
                 <div class="card" style="margin-top:30px">
                     <img src="{% static 'img/gal_img_sm_2.jpg' %}" alt="Jane" style="width:100%">
                     <div class="containerTeam">
-                        <h2>Jane Doe</h2>
-                        <p class="title">CEO &amp; Founder</p>
-                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                        <p>example@example.com</p>
+                        <h2>{{ Founder.name }}</h2>
+                        <p class="title">{{ Founder.position }}</p>
+                        <p>{{ Founder.description }}</p>
+                        <p>{{ Founder.email }}</p>
                         <p><a href="bio.html" class="team">Read More</a></p>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-6">
-                <div class="card" style="margin-top:30px">
-                    <img src="{% static 'img/gal_img_sm_2.jpg' %}" alt="Mike" style="width:100% ">
-                    <div class="containerTeam">
-                        <h2>Mike Ross</h2>
-                        <p class="title">Art Director</p>
-                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                        <p>example@example.com</p>
-                        <p><a href="bio.html" class="team">Read More</a></p>
-                    </div>
-                </div>
-            </div>
-
+            {% endfor %}
+        </div>
 
 </section>
 
@@ -132,14 +121,9 @@
         <!-- END row -->
         <div class="row probootstrap-animate">
             <div class="slider">
-                <div><img src="{% static 'img/client_2.png' %}" alt="" style="width:160; height:auto; max-height: 80px"></div>
-                <div><img src="{% static 'img/client_2.png' %}" alt="" style="width:160; height:auto; max-height: 80px"></div>
-                <div><img src="{% static 'img/client_3.png' %}" alt="" style="width:160; height:auto; max-height: 80px"></div>
-                <div><img src="{% static 'img/client_4.png' %}" alt="" style="width:160; height:auto; max-height: 80px"></div>
-                <div><img src="{% static 'img/client_1.png' %}" alt="" style="width:160; height:auto; max-height: 80px"></div>
-                <div><img src="{% static 'img/client_2.png' %}" alt="" style="width:160; height:auto; max-height: 80px"></div>
-                <div><img src="{% static 'img/client_3.png' %}" alt="" style="width:160; height:auto; max-height: 80px"></div>
-                <div><img src="{% static 'img/client_4.png' %}" alt="" style="width:160; height:auto; max-height: 80px"></div>
+                {% for Client in Client.all %}
+                <div><img src="{{ Client.image.url }}" alt="" style=" height:auto; max-height: 80px"></div>
+                {% endfor %}
             </div>
         </div>
 </section>
@@ -235,49 +219,21 @@
         <div class="row">
             <div class="col-md-12 probootstrap-animate">
                 <div class="owl-carousel owl-carousel-testimony owl-carousel-fullwidth">
+                    {% for Testimonial in Testimonial.all %}
                     <div class="item">
-
                         <div class="probootstrap-testimony-wrap text-center">
                             <figure>
-                                <img src="{% static 'img/person_1.jpg' %}" alt="">
+                                <img src="{{ Testimonial.image.url }}" alt="">
                             </figure>
-                            <blockquote class="quote">&ldquo;Design must be functional and functionality must be
-                                translated into
-                                visual aesthetics, without any reliance on gimmicks that have to be explained.&rdquo;
+                            <blockquote class="quote">&ldquo;{{ Testimonial.testimonial }}&rdquo;
                                 <cite class="author">&mdash;
-                                    Ferdinand A. Porsche <br> <span>Design Lead at AirBNB</span></cite></blockquote>
-                        </div>
-
+                                    {{ Testimonial.name }}<br>
+                                    <span>{{ Testimonial.position }}</span>
+                                </cite>
+                            </blockquote>
+                        </div>   
                     </div>
-                    <div class="item">
-                        <div class="probootstrap-testimony-wrap text-center">
-                            <figure>
-                                <img src="{% static 'img/person_2.jpg' %}" alt="">
-                            </figure>
-                            <blockquote class="quote">&ldquo;Creativity is just connecting things. When you ask
-                                creative people how
-                                they did something, they feel a little guilty because they didn’t really do it, they
-                                just saw
-                                something. It seemed obvious to them after a while.&rdquo; <cite class="author">&mdash;
-                                    Steve Jobs
-                                    <br> <span>Co-Founder Square</span></cite></blockquote>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="probootstrap-testimony-wrap text-center">
-                            <figure>
-                                <img src="{% static 'img/person_3.jpg' %}" alt="">
-                            </figure>
-                            <blockquote class="quote">&ldquo;I think design would be better if designers were much more
-                                skeptical
-                                about its applications. If you believe in the potency of your craft, where you choose
-                                to dole it out
-                                is not something to take lightly.&rdquo; <cite class="author">&mdash; Frank Chimero <br>
-                                    <span>Creative
-                                        Director at Twitter</span></cite></blockquote>
-                        </div>
-                    </div>
-
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -297,16 +253,11 @@
         </div>
         <!-- END row -->
         <div class="row">
+            {% for internationalPartner in internationalPartner.all %}
             <div class="col-sm-4  text-center client-logo probootstrap-animate">
-                <img src="{% static 'img/client_1.png' %}" class="img-responsive" alt="">
+                <img src="{{ internationalPartner.image.url }}" class="img-responsive" alt="">
             </div>
-            <div class="col-sm-4  text-center client-logo probootstrap-animate">
-                <img src="{% static 'img/client_2.png' %}" class="img-responsive" alt="">
-            </div>
-            <div class="clearfix visible-sm-block visible-xs-block"></div>
-            <div class="col-sm-4  text-center client-logo probootstrap-animate">
-                <img src="{% static 'img/client_3.png' %}" class="img-responsive" alt="">
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
