@@ -34,105 +34,13 @@
                     <div class="grid-sizer"></div>
                     <div class="gutter-sizer"></div>
                     <div class="probootstrap-gallery">
+                        {% for Gallery in Gallery.all %}
                         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="grid-item probootstrap-animate">
-                            <a href="img/gal_img_full_1.jpg" itemprop="contentUrl" data-size="1000x666">
-                                <img src="img/gal_img_sm_1.jpg" itemprop="thumbnail" alt="" />
+                            <a href="{{ Gallery.image.url }}" itemprop="contentUrl" data-size="{{ Gallery.image.width }}x{{ Gallery.image.height }}">
+                                <img src="{{ Gallery.image.url }}" itemprop="thumbnail" alt="" />
                             </a>
-                            <figcaption itemprop="caption description">Image caption here</figcaption>
                         </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="grid-item probootstrap-animate">
-                            <a href="img/gal_img_full_2.jpg" itemprop="contentUrl" data-size="1000x667">
-                                <img src="img/gal_img_sm_2.jpg" itemprop="thumbnail" alt="" />
-                            </a>
-                            <figcaption itemprop="caption description">Image caption here</figcaption>
-                        </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="grid-item probootstrap-animate">
-                            <a href="img/gal_img_full_3.jpg" itemprop="contentUrl" data-size="1000x1500">
-                                <img src="img/gal_img_sm_3.jpg" itemprop="thumbnail" alt="" />
-                            </a>
-                            <figcaption itemprop="caption description">Image caption here</figcaption>
-                        </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="grid-item probootstrap-animate">
-                            <a href="img/gal_img_full_4.jpg" itemprop="contentUrl" data-size="1000x662">
-                                <img src="img/gal_img_sm_4.jpg" itemprop="thumbnail" alt="" />
-                            </a>
-                            <figcaption itemprop="caption description">Image caption here</figcaption>
-                        </figure>
-
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="grid-item probootstrap-animate">
-                            <a href="img/gal_img_full_1.jpg" itemprop="contentUrl" data-size="1000x666">
-                                <img src="img/gal_img_sm_1.jpg" itemprop="thumbnail" alt="" />
-                            </a>
-                            <figcaption itemprop="caption description">Image caption here</figcaption>
-                        </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="grid-item probootstrap-animate">
-                            <a href="img/gal_img_full_2.jpg" itemprop="contentUrl" data-size="1000x667">
-                                <img src="img/gal_img_sm_2.jpg" itemprop="thumbnail" alt="" />
-                            </a>
-                            <figcaption itemprop="caption description">Image caption here</figcaption>
-                        </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="grid-item probootstrap-animate">
-                            <a href="img/gal_img_full_3.jpg" itemprop="contentUrl" data-size="1000x1500">
-                                <img src="img/gal_img_sm_3.jpg" itemprop="thumbnail" alt="" />
-                            </a>
-                            <figcaption itemprop="caption description">Image caption here</figcaption>
-                        </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="grid-item probootstrap-animate">
-                            <a href="img/gal_img_full_4.jpg" itemprop="contentUrl" data-size="1000x662">
-                                <img src="img/gal_img_sm_4.jpg" itemprop="thumbnail" alt="" />
-                            </a>
-                            <figcaption itemprop="caption description">Image caption here</figcaption>
-                        </figure>
-
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="grid-item probootstrap-animate">
-                            <a href="img/gal_img_full_1.jpg" itemprop="contentUrl" data-size="1000x666">
-                                <img src="img/gal_img_sm_1.jpg" itemprop="thumbnail" alt="" />
-                            </a>
-                            <figcaption itemprop="caption description">Image caption here</figcaption>
-                        </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="grid-item probootstrap-animate">
-                            <a href="img/gal_img_full_2.jpg" itemprop="contentUrl" data-size="1000x667">
-                                <img src="img/gal_img_sm_2.jpg" itemprop="thumbnail" alt="" />
-                            </a>
-                            <figcaption itemprop="caption description">Image caption here</figcaption>
-                        </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="grid-item probootstrap-animate">
-                            <a href="img/gal_img_full_3.jpg" itemprop="contentUrl" data-size="1000x1500">
-                                <img src="img/gal_img_sm_3.jpg" itemprop="thumbnail" alt="" />
-                            </a>
-                            <figcaption itemprop="caption description">Image caption here</figcaption>
-                        </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="grid-item probootstrap-animate">
-                            <a href="img/gal_img_full_4.jpg" itemprop="contentUrl" data-size="1000x662">
-                                <img src="img/gal_img_sm_4.jpg" itemprop="thumbnail" alt="" />
-                            </a>
-                            <figcaption itemprop="caption description">Image caption here</figcaption>
-                        </figure>
-
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="grid-item probootstrap-animate">
-                            <a href="img/gal_img_full_1.jpg" itemprop="contentUrl" data-size="1000x666">
-                                <img src="img/gal_img_sm_1.jpg" itemprop="thumbnail" alt="" />
-                            </a>
-                            <figcaption itemprop="caption description">Image caption here</figcaption>
-                        </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="grid-item probootstrap-animate">
-                            <a href="img/gal_img_full_2.jpg" itemprop="contentUrl" data-size="1000x667">
-                                <img src="img/gal_img_sm_2.jpg" itemprop="thumbnail" alt="" />
-                            </a>
-                            <figcaption itemprop="caption description">Image caption here</figcaption>
-                        </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="grid-item probootstrap-animate">
-                            <a href="img/gal_img_full_3.jpg" itemprop="contentUrl" data-size="1000x1500">
-                                <img src="img/gal_img_sm_3.jpg" itemprop="thumbnail" alt="" />
-                            </a>
-                            <figcaption itemprop="caption description">Image caption here</figcaption>
-                        </figure>
-                        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="grid-item probootstrap-animate">
-                            <a href="img/gal_img_full_4.jpg" itemprop="contentUrl" data-size="1000x662">
-                                <img src="img/gal_img_sm_4.jpg" itemprop="thumbnail" alt="" />
-                            </a>
-                            <figcaption itemprop="caption description">Image caption here</figcaption>
-                        </figure>
+                        {% endfor %}
                     </div>
 
                 </div>
@@ -160,27 +68,12 @@
                     <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg" />
                 </div>
                 <div data-u="slides" style="cursor:default;position:relative;top:0px;left:240px;width:720px;height:480px;overflow:hidden;">
+                    {% for Certificate in Certificate.all %}
                     <div>
-                        <img data-u="image" src="img/gal_img_sm_1.jpg" />
-                        <img data-u="thumb" src="img/gal_img_sm_1.jpg" />
+                        <img data-u="image" src="{{ Certificate.image.url }}" />
+                        <img data-u="thumb" src="{{ Certificate.image.url }}" />
                     </div>
-                    <div>
-                        <img data-u="image" src="img/gal_img_sm_2.jpg" />
-                        <img data-u="thumb" src="img/gal_img_sm_2.jpg" />
-                    </div>
-                    <div>
-                        <img data-u="image" src="img/gal_img_sm_3.jpg" />
-                        <img data-u="thumb" src="img/gal_img_sm_3.jpg" />
-                    </div>
-                    <div>
-                        <img data-u="image" src="img/gal_img_sm_1.jpg" />
-                        <img data-u="thumb" src="img/gal_img_sm_1.jpg" />
-                    </div>
-                    <div>
-                        <img data-u="image" src="img/gal_img_sm_1.jpg" />
-                        <img data-u="thumb" src="img/gal_img_sm_1.jpg" />
-                    </div>
-
+                    {% endfor %}
                 </div>
                 <!-- Thumbnail Navigator -->
                 <div data-u="thumbnavigator" class="jssort101" style="position:absolute;left:0px;top:0px;width:240px;height:480px;background-color:#000;"

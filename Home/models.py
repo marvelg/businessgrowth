@@ -5,7 +5,7 @@ from ckeditor.fields import RichTextField
 class Slider(models.Model):
     text = models.CharField(max_length = 120)
     image = models.ImageField(upload_to = "images/")
-
+    
     def __str__(self):
         return self.text
     class Meta:

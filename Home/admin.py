@@ -12,6 +12,7 @@ class noAdd(admin.ModelAdmin):
      def has_add_permission(self, request):
         return False
 
+
 admin.site.register(Welcome, noAdd)
 admin.site.register(Slider)
 admin.site.register(bestService)
@@ -19,3 +20,5 @@ admin.site.register(Founder, noAdd)
 admin.site.register(Client)
 admin.site.register(Testimonial)
 admin.site.register(internationalPartner)
+
+admin.site.site_header = 'BusinessGrowth Admin'

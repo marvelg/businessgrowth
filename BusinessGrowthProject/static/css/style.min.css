@@ -225,7 +225,7 @@ a:hover {
     margin-top: -11px;
     content: "\e924";
     font-size: 20px;
-    color: rgba(0, 0, 0, .4);
+    color: rgba(255, 255, 255, .5);
     -webkit-transition: .3s all;
     transition: .3s all
 }
