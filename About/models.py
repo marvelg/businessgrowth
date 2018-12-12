@@ -4,7 +4,8 @@ from ckeditor_uploader.fields import RichTextUploadingField
 class Segment(models.Model):
     title = models.CharField(max_length = 120, help_text = "All sub headers should be header 3")
     content = RichTextUploadingField(help_text = "All sub headers should be header 3")
-
+    created = models.DateTimeField(auto_now_add=True,  null=True, blank=True)
+    updated = models.DateTimeField(auto_now=True)
     def __str__(self):
         return self.title
     class Meta:
