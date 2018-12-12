@@ -1,7 +1,7 @@
 {% extends 'base.html'%}
 {% load staticfiles %}
 {% block links %}
-<script src="{% static 'js/jqueryscript.js' %}"></script>
+
 {% endblock %}
 
 {% block content %}
@@ -24,77 +24,21 @@
 
 <section class="probootstrap-section probootstrap-bg-white">
     <div class="container">
+        {% for Segment in Segment.all %}
         <div class="row">
             <div class="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate">
-                <h2>A Short Story</h2>
+                <h2>{{ Segment.title }}</h2>
             </div>
         </div>
         <!-- END row -->
         <div class="row mb40">
-            <div class="col-md-6 probootstrap-animate">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere est aspernatur quibusdam harum id.
-                    Et
-                    tenetur reiciendis repellat dolore aliquam nam maxime fuga quas eius maiores nesciunt enim earum!
-                    Beatae
-                    harum sed nam fugit error. Est tempora maxime obcaecati atque iusto. Reprehenderit sint deserunt
-                    necessitatibus magnam natus vero beatae saepe explicabo molestias similique fuga amet facilis
-                    molestiae
-                    recusandae voluptas dolore. Sed facilis quo voluptates ratione temporibus tempore autem iure rerum
-                    eum
-                    optio consectetur in reiciendis totam quibusdam esse maxime pariatur nesciunt similique accusantium
-                    dignissimos maiores asperiores sunt numquam! </p>
+            <div class="col-md-10 probootstrap-animate col-md-offset-1">
+                <p>{{ Segment.content | safe }}</p>
             </div>
-            <div class="col-md-6 probootstrap-animate">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus molestias tempora voluptate eveniet
-                    omnis
-                    nisi eos, eum nulla ea ad! Rem quo esse facere, vel dolorem recusandae, deserunt officia a, quia
-                    illo
-                    accusamus, excepturi nam cumque et cupiditate ratione tempore? Expedita in possimus odit illo vitae
-                    ea
-                    fugit sapiente totam! Id labore ipsum molestias sunt ex. Voluptates deleniti delectus nulla esse
-                    similique.</p>
-            </div>
+
         </div>
+        {% endfor %}
         <!-- END row -->
-
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-3">
-                    <a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox">
-                        <img src="img/gal_img_sm_1.jpg" alt="...">
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox">
-                        <img src="img/gal_img_sm_4.jpg" alt="...">
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox">
-                        <img src="img/gal_img_sm_2.jpg" alt="...">
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="#" class="thumbnail" data-toggle="modal" data-target="#lightbox">
-                        <img src="img/gal_img_sm_2.jpg" alt="...">
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div id="lightbox" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-                <button type="button" class="close hidden" data-dismiss="modal" aria-hidden="true">×</button>
-                <div class="modal-content-lightbox">
-                    <div class="modal-body-lightbox">
-                        <img src="" alt="" />
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
 </section>
 
@@ -179,6 +123,6 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="{% static 'js/lightbox.js' %}"></script>
+
 
 {% endblock %}

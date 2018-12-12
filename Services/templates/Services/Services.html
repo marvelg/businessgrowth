@@ -8,14 +8,15 @@
 
 {% block content %}
 
+{% for Slider in Slider.all %}
 <section class="flexslider">
     <ul class="slides">
-        <li style="background-image: url(img/slider_1.jpg)" class="overlay">
+        <li style="background-image: url({{ Slider.image.url }})" class="overlay">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="probootstrap-slider-text text-center">
-                            <h1 class="probootstrap-heading">Our Services</h1>
+                            <h1 class="probootstrap-heading">{{ Slider.text }}</h1>
                         </div>
                     </div>
                 </div>
@@ -24,7 +25,7 @@
 
     </ul>
 </section>
-
+{% endfor %}
 <section class="probootstrap-section probootstrap-bg-white">
     <div class="container">
         <div class="row">
@@ -34,126 +35,25 @@
         </div>
         <!-- END row -->
         <div class="row">
+            {% for Service in Service.all %}
             <div class="col-md-6">
                 <a href="product.html" class="productLink">
                     <div class="zoom">
                         <div class="probootstrap-service-2 probootstrap-animate">
                             <div class="image">
                                 <div class="image-bg">
-                                    <img src="img/img_sm_1.jpg" alt="">
+                                    <img src="{{ Service.image.url }}" alt="">
                                 </div>
                             </div>
                             <div class="text">
-                                <h3>LEADERSHIP</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam pariatur modi
-                                    praesentium
-                                    deleniti
-                                    molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
+                                <h3>{{ Service.title }}</h3>
+                                <p>{{ Service.description }}</p>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col-md-6">
-                <a href="product.html" class="productLink">
-                    <div class="zoom">
-                        <div class="probootstrap-service-2 probootstrap-animate">
-                            <div class="image">
-                                <div class="image-bg">
-                                    <img src="img/gal_img_full_3.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="text">
-                                <h3>HUMAN RESOURCES</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam pariatur modi
-                                    praesentium
-                                    deleniti
-                                    molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6">
-                <a href="product.html" class="productLink">
-                    <div class="zoom">
-                        <div class="probootstrap-service-2 probootstrap-animate">
-                            <div class="image">
-                                <div class="image-bg">
-                                    <img src="img/img_sm_1.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="text">
-                                <h3>LEADERSHIP</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam pariatur modi
-                                    praesentium
-                                    deleniti
-                                    molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6">
-                <a href="product.html" class="productLink">
-                    <div class="zoom">
-                        <div class="probootstrap-service-2 probootstrap-animate">
-                            <div class="image">
-                                <div class="image-bg">
-                                    <img src="img/gal_img_full_3.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="text">
-                                <h3>HUMAN RESOURCES</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam pariatur modi
-                                    praesentium
-                                    deleniti
-                                    molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6">
-                <a href="product.html" class="productLink">
-                    <div class="zoom">
-                        <div class="probootstrap-service-2 probootstrap-animate">
-                            <div class="image">
-                                <div class="image-bg">
-                                    <img src="img/gal_img_full_3.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="text">
-                                <h3>HUMAN RESOURCES</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam pariatur modi
-                                    praesentium
-                                    deleniti
-                                    molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-6">
-                <a href="product.html" class="productLink">
-                    <div class="zoom">
-                        <div class="probootstrap-service-2 probootstrap-animate">
-                            <div class="image">
-                                <div class="image-bg">
-                                    <img src="img/gal_img_full_3.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="text">
-                                <h3>HUMAN RESOURCES</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam pariatur modi
-                                    praesentium
-                                    deleniti
-                                    molestiae officiis atque numquam quos quis nisi voluptatum architecto rerum error.</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            {% endfor %}
             <!-- END ROW -->
         </div>
     </div>

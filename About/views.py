@@ -1,5 +1,6 @@
 from django.shortcuts import render
-
+from .models import Segment
 # Create your views here.
 def about(request):
-    return render(request, 'About/About.html')
+    segment = Segment.objects
+    return render(request, 'About/About.html', {"Segment" : segment})
