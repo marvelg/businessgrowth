@@ -18,3 +18,4 @@ class Client(models.Model):
 
     class Meta:
         verbose_name_plural = "2. Clients"
+

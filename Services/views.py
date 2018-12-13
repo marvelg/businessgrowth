@@ -1,14 +1,17 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Slider
 from .models import Service
+from .models import Product
 # Create your views here.
 def services(request):
     slider = Slider.objects
     service = Service.objects
     return render(request, 'Services/Services.html', {"Slider": slider, "Service" : service})
 
-def product(request):
-    return render(request, 'Services/Product.html')
+def product(request, product_id):
+    service = Service.objects
+    product = get_object_or_404(Product, pk = product_id)
+    return render(request, 'Services/Product.html', {"Product" : product, "Service" : service})
 
 def productdescription(request):
     return render(request, 'Services/Product-Description.html')

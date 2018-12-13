@@ -21,96 +21,43 @@
 
     </ul>
 </section>
+{% for Service in Service.all %}
 
+{% for Product in Service.Product.all %}
 <section class="probootstrap-section probootstrap-bg-white" style="padding:40px">
     <div class="container">
         <div class="row mb40">
             <div class="col-md-10 col-md-offset-1 probootstrap-animate">
-                <h2>Description</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus molestias tempora voluptate eveniet
-                    omnis
-                    nisi eos, eum nulla ea ad! Rem quo esse facere, vel dolorem recusandae, deserunt officia a, quia
-                    illo
-                    accusamus, excepturi nam cumque et cupiditate ratione tempore? Expedita in possimus odit illo vitae
-                    ea
-                    fugit sapiente totam! Id labore ipsum molestias sunt ex. Voluptates deleniti delectus nulla esse
-                    similique.</p>
-                <p><a href="product-description.html" class="btn btn-primary">Read More</a></p>
+                <h2>{{Product.title}}</h2>
+                <p>{{Product.description | safe}}</p>
+
             </div>
         </div>
         <!-- END row -->
 
         <div class="row mb40">
             <div class="col-md-6">
-                <img src="img/gal_img_full_4.jpg" class="img-responsive">
-                <p style="margin-top:35px" class="probootstrap-animate">Lorem ipsum dolor sit amet, consectetur
-                    adipisicing
-                    elit. Minus molestias tempora voluptate eveniet omnis
-                    nisi eos, eum nulla ea ad! Rem quo esse facere, vel dolorem recusandae, deserunt officia a, quia
-                    illo
-                    accusamus, excepturi nam cumque et cupiditate ratione tempore? Expedita in possimus odit illo vitae
-                    ea
-                    fugit sapiente totam! Id labore ipsum molestias sunt ex. Voluptates deleniti delectus nulla esse
-                    similique.</p>
+                {% if Product.image1 %}
+                <img src="{{ Product.image1.url }}" class="img-responsive">
+                {% endif %}
             </div>
             <div class="col-md-6">
-                <img src="img/gal_img_full_2.jpg" class="img-responsive">
-                <p style="margin-top:35px" class="probootstrap-animate">Lorem ipsum dolor sit amet, consectetur
-                    adipisicing
-                    elit. Minus molestias tempora voluptate eveniet omnis
-                    nisi eos, eum nulla ea ad! Rem quo esse facere, vel dolorem recusandae, deserunt officia.</p>
+                {% if Product.image2 %}
+                <img src="{{ Product.image2.url }}" class="img-responsive">
+                {% endif %}
             </div>
         </div>
-
-
+        <div class="zoom">
+            <p class="text-center">
+                <a href="product-description.html" class="btn btn-primary" style="font-size : 20px">Read More</a>
+            </p>
+        </div>
 
     </div>
 </section>
+{% endfor %}
 
-<section class="probootstrap-section probootstrap-bg-white" style="padding:40px">
-    <div class="container">
-        <div class="row mb40">
-            <div class="col-md-10 col-md-offset-1 probootstrap-animate">
-                <h2>Description</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus molestias tempora voluptate eveniet
-                    omnis
-                    nisi eos, eum nulla ea ad! Rem quo esse facere, vel dolorem recusandae, deserunt officia a, quia
-                    illo
-                    accusamus, excepturi nam cumque et cupiditate ratione tempore? Expedita in possimus odit illo vitae
-                    ea
-                    fugit sapiente totam! Id labore ipsum molestias sunt ex. Voluptates deleniti delectus nulla esse
-                    similique.</p>
-                <p><a href="product-description.html" class="btn btn-primary">Read More</a></p>
-            </div>
-        </div>
-        <!-- END row -->
-
-        <div class="row mb40">
-            <div class="col-md-6">
-                <img src="img/gal_img_full_4.jpg" class="img-responsive">
-                <p style="margin-top:35px" class="probootstrap-animate">Lorem ipsum dolor sit amet, consectetur
-                    adipisicing
-                    elit. Minus molestias tempora voluptate eveniet omnis
-                    nisi eos, eum nulla ea ad! Rem quo esse facere, vel dolorem recusandae, deserunt officia a, quia
-                    illo
-                    accusamus, excepturi nam cumque et cupiditate ratione tempore? Expedita in possimus odit illo vitae
-                    ea
-                    fugit sapiente totam! Id labore ipsum molestias sunt ex. Voluptates deleniti delectus nulla esse
-                    similique.</p>
-            </div>
-            <div class="col-md-6">
-                <img src="img/gal_img_full_2.jpg" class="img-responsive">
-                <p style="margin-top:35px" class="probootstrap-animate">Lorem ipsum dolor sit amet, consectetur
-                    adipisicing
-                    elit. Minus molestias tempora voluptate eveniet omnis
-                    nisi eos, eum nulla ea ad! Rem quo esse facere, vel dolorem recusandae, deserunt officia.</p>
-            </div>
-        </div>
-
-
-
-    </div>
-</section>
+{% endfor %}
 
 
 
