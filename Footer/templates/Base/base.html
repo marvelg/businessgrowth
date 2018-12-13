@@ -58,33 +58,33 @@
     <footer class="probootstrap-footer ">
         <div class="container">
             <div class="row">
+                
                 <div class="col-md-4">
-                    <p>GET CONNECTED</p>
+                    <p> GET CONNECTED </p>
+                    {% for Link in Link.all %}
                     <ul class="probootstrap-footer-social">
-                        <li><a href="#"><i class="icon-twitter"></i></a></li>
-                        <li><a href="#"><i class="icon-facebook"></i></a></li>
-                        <li><a href="#"><i class="icon-github"></i></a></li>
+                        <li><a href="{{ Link.link }}"><img src="{{ Link.linkImage.url }}" alt="" style = "width: 25px; height: auto"></a></li>
                     </ul>
-                    <img src="{% static 'img/logo-unscrolled.png' %}" style="width: 100%; height:auto">
+                    {% endfor %}
+                    <img src="{% static 'img/footerLogo.png' %}" style="width: 100%; height:auto">
                 </div>
+                
                 <div class="col-md-4">
                     <p>OUR OFFICE</p>
-                    <p>BusinessGrowth - Head Office
-                        Jl. Bukit Gading Raya,
-                        Kompleks Gading Bukit Indah Blok V-7,
-                        Kelapa Gading, Jakarta Utara 14240,
-                        Indonesia</p>
+                    {% for Address in Address.all %}
+                    <p>{{ Address.address | safe }}</p>
+                    {% endfor %}
                 </div>
+                
                 <div class="col-md-4">
-                    <p>WORKING HOURS</p>
-                    <p><span style="color:red">Office</span> : +62 21 29578599 (Hunting)<br>
-
-                        <span style="color:red">Mobile</span> : +62 82111997750<br>
-
-                        <span style="color:red">Email</span> : info@businessgrowthcorp.com<br>
-
-                        <span style="color:red">Working Hours</span> : 8:00 a.m - 17:00 p.m</p>
+                    <p>DETAILS</p>
+                    <p>
+                        {% for Detail in Detail.all %}
+                        <span style="color:red">{{ Detail.header }}</span> : {{ Detail.detail }}<br>
+                        {% endfor %}
+                    </p>
                 </div>
+                
             </div>
         </div>
     </footer>

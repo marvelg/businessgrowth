@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'Gallery.apps.GalleryConfig',
     'Home.apps.HomeConfig',
     'Services.apps.ServicesConfig',
-    'Base.apps.BaseConfig',
+    'Footer.apps.FooterConfig',
     'ckeditor',
     'ckeditor_uploader',
 ]
@@ -66,7 +66,7 @@ ROOT_URLCONF = 'BusinessGrowthProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['Base/templates/Base'],
+        'DIRS': ['Footer/templates/Base'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,6 +74,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'Footer.context_processors.add_variable_to_context'
             ],
         },
     },
