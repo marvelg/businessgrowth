@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block links %}
 <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 <script src="{% static 'js/jqueryscript.js' %}"></script>
@@ -8,12 +8,12 @@
 {% block content %}
 <section class="flexslider">
     <ul class="slides">
-        <li style="background-image: url(img/slider_1.jpg)" class="overlay">
+        <li style="background-image: url({{ Founder.detailImage.url }})" class="overlay">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="probootstrap-slider-text text-center">
-                            <h1 class="probootstrap-heading">Founder Name</h1>
+                            <h1 class="probootstrap-heading">{{ Founder.name }}</h1>
                         </div>
                     </div>
                 </div>
@@ -28,28 +28,7 @@
             <div class="col-lg-10 col-lg-offset-1">
                 <div class="post-details" style="margin-top:20px">
                     <div class="post-body">
-                        <h1 class="blogTitle">Education</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                            exercitation
-                            ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                            incididunt ut labore
-                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut
-                            aliquip ex ea commodo consequat.</p>
-                        <h3 class="blogTitle">Accomplishments</h3>
-                        <p>div Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda temporibus iusto
-                            voluptates
-                            deleniti similique rerum ducimus sint ex odio saepe. Sapiente quae pariatur ratione
-                            quis perspiciatis
-                            deleniti accusantium</p>
-                        <p>quasi nam. Libero dicta eum recusandae, commodi, ad, autem at ea iusto numquam
-                            veritatis, officiis.
-                            Accusantium optio minus, voluptatem? Quia reprehenderit, veniam quibusdam provident,
-                            fugit iusto
-                            ullam voluptas neque soluta adipisci ad.</p>
+                        <p>{{ Founder.detailText | safe }}</p>
                     </div>
 
                 </div>

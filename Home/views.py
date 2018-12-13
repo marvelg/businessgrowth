@@ -19,5 +19,6 @@ def home(request):
     internationalpartner = internationalPartner.objects
     return render(request, 'Home/Home.html', {"Welcome": welcome, "Slider" : slider, "bestService" : bestservice, "Founder" : founder, "Client" : client, "Testimonial" : testimonial, "internationalPartner" : internationalpartner})
 
-def bio(request):
-    return render(request, 'Home/Bio.html')
+def bio(request, Founder_id):
+    founder = get_object_or_404(Founder, pk = Founder_id)
+    return render(request, 'Home/Bio.html', {"Founder" : founder})

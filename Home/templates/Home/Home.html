@@ -98,7 +98,7 @@
                         <p class="title">{{ Founder.position }}</p>
                         <p>{{ Founder.description }}</p>
                         <p>{{ Founder.email }}</p>
-                        <p><a href="bio.html" class="team">Read More</a></p>
+                        <p><a href="{% url 'Bio' Founder.id %}" class="team">Read More</a></p>
                     </div>
                 </div>
             </div>

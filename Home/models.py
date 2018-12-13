@@ -41,7 +41,8 @@ class Founder(models.Model):
     position = models.CharField(max_length = 100)
     description = models.TextField(blank = True)
     email = models.EmailField(blank = True)
-
+    detailImage = models.ImageField(upload_to = "images/", default = "")
+    detailText = RichTextField(default = "", help_text = "Sub headers should be heading 3")
     def __str__(self):
         return self.name
     class Meta:
