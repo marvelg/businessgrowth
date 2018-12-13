@@ -24,8 +24,7 @@ import Contact.views
 import Gallery.views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',Home.views.home, name = "Home"),
-    path('bio/',Home.views.bio, name = "Bio"),
+    path('', include('Home.urls')),
     path('about/', About.views.about, name = "About"),
     path('blog/', include('Blog.urls')),
     path('clients/', Clients.views.clients, name = "Clients"),

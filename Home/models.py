@@ -37,6 +37,7 @@ class bestService(models.Model):
 
 class Founder(models.Model):
     name = models.CharField(max_length = 30)
+    image = models.ImageField(upload_to = "images/", default = "")
     position = models.CharField(max_length = 100)
     description = models.TextField(blank = True)
     email = models.EmailField(blank = True)

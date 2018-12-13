@@ -92,7 +92,7 @@
             {% for Founder in Founder.all %}
             <div class="col-md-6">
                 <div class="card" style="margin-top:30px">
-                    <img src="{% static 'img/gal_img_sm_2.jpg' %}" alt="Jane" style="width:100%">
+                    <img src="{{ Founder.image.url }}" alt="Jane" style="width:100%">
                     <div class="containerTeam">
                         <h2>{{ Founder.name }}</h2>
                         <p class="title">{{ Founder.position }}</p>
