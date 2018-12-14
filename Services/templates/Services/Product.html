@@ -22,11 +22,12 @@
     </ul>
 </section>
 {% for Service in Service.all %}
-
+{% if Service.id == product_id %}
 {% for Product in Service.Product.all %}
+
 <section class="probootstrap-section probootstrap-bg-white" style="padding:40px">
     <div class="container">
-        <div class="row mb40">
+        <div class="row mb20">
             <div class="col-md-10 col-md-offset-1 probootstrap-animate">
                 <h2>{{Product.title}}</h2>
                 <p>{{Product.description | safe}}</p>
@@ -35,7 +36,7 @@
         </div>
         <!-- END row -->
 
-        <div class="row mb40">
+        <div class="row mb30">
             <div class="col-md-6">
                 {% if Product.image1 %}
                 <img src="{{ Product.image1.url }}" class="img-responsive">
@@ -55,8 +56,9 @@
 
     </div>
 </section>
-{% endfor %}
 
+{% endfor %}
+{% endif %}
 {% endfor %}
 
 

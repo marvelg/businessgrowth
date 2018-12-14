@@ -9,9 +9,10 @@ def services(request):
     return render(request, 'Services/Services.html', {"Slider": slider, "Service" : service})
 
 def product(request, product_id):
+    Product_id = product_id
     service = Service.objects
     product = get_object_or_404(Product, pk = product_id)
-    return render(request, 'Services/Product.html', {"Product" : product, "Service" : service})
+    return render(request, 'Services/Product.html', {"Product" : product, "Service" : service, "product_id" : Product_id})
 
 def productdescription(request):
     return render(request, 'Services/Product-Description.html')
