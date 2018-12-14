@@ -7,18 +7,19 @@
 {% block content%}
 <section class="flexslider">
     <ul class="slides">
-        <li style="background-image: url(img/slider_1.jpg)" class="overlay">
+        {% for Slider in Slider.all %}
+        <li style="background-image: url({{Slider.image.url}})" class="overlay">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="probootstrap-slider-text text-center">
-                            <h1 class="probootstrap-heading">Contact Us</h1>
+                            <h1 class="probootstrap-heading">{{Slider.text}}</h1>
                         </div>
                     </div>
                 </div>
             </div>
         </li>
-
+        {% endfor %}
     </ul>
 </section>
 

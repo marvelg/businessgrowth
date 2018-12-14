@@ -8,15 +8,18 @@ from .models import Client
 from .models import Testimonial
 from .models import internationalPartner
 # Register your models here.
-class noAdd(admin.ModelAdmin):
-     def has_add_permission(self, request):
+class Static(admin.ModelAdmin):
+    def has_add_permission(self, request):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
         return False
 
 
-admin.site.register(Welcome, noAdd)
+admin.site.register(Welcome, Static)
 admin.site.register(Slider)
 admin.site.register(bestService)
-admin.site.register(Founder, noAdd)
+admin.site.register(Founder, Static)
 admin.site.register(Client)
 admin.site.register(Testimonial)
 admin.site.register(internationalPartner)

@@ -9,7 +9,7 @@ class Slider(models.Model):
     def __str__(self):
         return self.text
     class Meta:
-        verbose_name_plural = "1. Sliders"
+        verbose_name_plural = "1. Slider"
 
 class Welcome(models.Model):
     title = models.CharField(max_length = 120, default = "Title goes here")

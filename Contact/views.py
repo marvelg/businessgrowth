@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .models import Contact
+from .models import Slider
 # Create your views here.
 def contact(request):
     contact = Contact.objects
-    return render(request, "Contact/Contact.html", {"Contact" : contact})
+    slider = Slider.objects
+    return render(request, "Contact/Contact.html", {"Contact" : contact, "Slider" : slider})

@@ -6,112 +6,59 @@
 {% endblock %}
 
 {% block content%}
+
 <section class="flexslider">
     <ul class="slides">
-        <li style="background-image: url(img/slider_1.jpg)" class="overlay">
+        {% for Slider in Slider.all%}
+        <li style="background-image: url({{Slider.image.url}})" class="overlay">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="probootstrap-slider-text text-center">
-                            <h1 class="probootstrap-heading">Blog</h1>
+                            <h1 class="probootstrap-heading">{{Slider.text}}</h1>
                         </div>
                     </div>
                 </div>
             </div>
         </li>
+        {% endfor %}
     </ul>
 </section>
 
 <section class="probootstrap-section probootstrap-bg-white ">
     <div class="container">
         <div class="row probootstrap-animate">
+            {% for Blog in Blog.all %}
             <div class="blog col-md-6">
                 <a href="{% url 'Post' %}" target="_blank">
-                    <img src="img/gal_img_sm_2.jpg" alt="" class="img-fluid">
+                    <img src="{{ Blog.image.url }}" alt="" class="img-fluid">
                 </a>
                 <div class="d-flex justify-content-between">
-                    <div class="blogDate">20 May | 2016</div>
-                    <div class="blogCategory">BUSINESS</div>
+                    <div class="blogDate">{{Blog.properDate}}</div>
+                    <div class="blogCategory">{{Blog.blogCategory}}</div>
                 </div>
                 <a href="{% url 'Post' %}" target="_blank">
-                    <h3 class="blogTitle">Alberto Savoia Can Teach You About Interior</h3>
+                    <h3 class="blogTitle">{{Blog.header}}</h3>
                 </a>
-                <p class="text-muted blogSummary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                    eiusmod
-                    tempor incididunt ut labore.</p>
+                <p class="text-muted blogSummary">{{ Blog.blogDescription}}</p>
                 <footer class="d-flex blogFooter align-items-center">
-                    <div class="avatar"><img src="img/avatar-1.jpg" class="img-fluid"></div>
-                    <div class="blogEditor">John Doe</div>
+                    <div class="avatar"><img src="{{Blog.editorImage.url}}" class="img-fluid"></div>
+                    <div class="blogEditor">{{Blog.editor}}</div>
                 </footer>
             </div>
-            <div class="blog col-md-6">
-                <a href="#">
-                    <img src="img/gal_img_sm_2.jpg" alt="" class="img-fluid">
-                </a>
-                <div class="d-flex justify-content-between">
-                    <div class="blogDate">20 May | 2016</div>
-                    <div class="blogCategory">BUSINESS</div>
-                </div>
-                <a href="#">
-                    <h3 class="blogTitle">Alberto Savoia Can Teach You About Interior</h3>
-                </a>
-                <p class="text-muted blogSummary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                    eiusmod
-                    tempor incididunt ut labore.</p>
-                <footer class="d-flex blogFooter align-items-center">
-                    <div class="avatar"><img src="img/avatar-1.jpg" class="img-fluid"></div>
-                    <div class="blogEditor">John Doe</div>
-                </footer>
-            </div>
-            <div class="blog col-md-6">
-                <a href="#">
-                    <img src="img/gal_img_sm_2.jpg" alt="" class="img-fluid">
-                </a>
-                <div class="d-flex justify-content-between">
-                    <div class="blogDate">20 May | 2016</div>
-                    <div class="blogCategory">BUSINESS</div>
-                </div>
-                <a href="#">
-                    <h3 class="blogTitle">Alberto Savoia Can Teach You About Interior</h3>
-                </a>
-                <p class="text-muted blogSummary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                    eiusmod
-                    tempor incididunt ut labore.</p>
-                <footer class="d-flex blogFooter align-items-center">
-                    <div class="avatar"><img src="img/avatar-1.jpg" class="img-fluid"></div>
-                    <div class="blogEditor">John Doe</div>
-                </footer>
-            </div>
-            <div class="blog col-md-6">
-                <a href="#">
-                    <img src="img/gal_img_sm_2.jpg" alt="" class="img-fluid">
-                </a>
-                <div class="d-flex justify-content-between">
-                    <div class="blogDate">20 May | 2016</div>
-                    <div class="blogCategory">BUSINESS</div>
-                </div>
-                <a href="#">
-                    <h3 class="blogTitle">Alberto Savoia Can Teach You About Interior</h3>
-                </a>
-                <p class="text-muted blogSummary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                    eiusmod
-                    tempor incididunt ut labore.</p>
-                <footer class="d-flex blogFooter align-items-center">
-                    <div class="avatar"><img src="img/avatar-1.jpg" class="img-fluid"></div>
-                    <div class="blogEditor">John Doe</div>
-                </footer>
-            </div>
+            {% endfor %}
         </div>
         <div class="row probootstrap-animate">
             <div class="col-md-12">
                 <nav aria-label="Page navigation example">
                     <ul class="pagination pagination-template d-flex justify-content-center">
-                        <li class="page-item"><a href="#" class="page-link"> <img src="{% static 'img/left-arrow.png' %}" alt="" style="width:12px; height:auto"></a></li>
+                        <li class="page-item"><a href="#" class="page-link"> <img src="{% static 'img/left-arrow.png' %}"
+                                    alt="" style="width:12px; height:auto"></a></li>
                         <li class="page-item"><a href="#" class="page-link">1</a></li>
                         <li class="page-item"><a href="#" class="page-link">2</a></li>
                         <li class="page-item"><a href="#" class="page-link">3</a></li>
-                        <li class="page-item"><a href="#" class="page-link"> <img src="{% static 'img/right-arrow.png' %}" alt=""
-                                    style="width:12px; height:auto"></a></li>
+                        <li class="page-item"><a href="#" class="page-link"> <img src="{% static 'img/right-arrow.png' %}"
+                                    alt="" style="width:12px; height:auto"></a></li>
                     </ul>
                 </nav>
             </div>

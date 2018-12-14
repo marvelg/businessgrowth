@@ -7,47 +7,34 @@
 {% block content %}
 <section class="flexslider">
     <ul class="slides">
-        <li style="background-image: url(img/slider_1.jpg)" class="overlay">
+        {% for testimonialSlider in testimonialSlider.all %}
+        <li style="background-image: url({{testimonialSlider.image.url}})" class="overlay">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="probootstrap-slider-text text-center">
-                            <h1 class="probootstrap-heading">Testimonials</h1>
+                            <h1 class="probootstrap-heading">{{testimonialSlider.text}}</h1>
                         </div>
                     </div>
                 </div>
             </div>
         </li>
-
+        {% endfor %}
     </ul>
 </section>
 
 <section class="probootstrap-section probootstrap-bg-white">
     <div class="container">
+        {% for Testimonial in Testimonial.all %}
         <div class="row probootstrap-animate">
             <div class="col-md-12">
                 <div class="testimonial">
-                    <h3>Header Text</h3>
-                    <p>ambled it to make a type specimen book. It has survived not only five centuries, but als</p>
+                    <h3>{{Testimonial.header}}</h3>
+                    <p>{{Testimonial.text | safe}}</p>
                 </div>
             </div>
         </div>
-        <div class="row probootstrap-animate">
-            <div class="col-md-12">
-                <div class="testimonial">
-                    <h3>Header Text</h3>
-                    <p>ambled it to make a type specimen book. It has survived not only five centuries, but als</p>
-                </div>
-            </div>
-        </div>
-        <div class="row probootstrap-animate">
-            <div class="col-md-12">
-                <div class="testimonial">
-                    <h3>Header Text</h3>
-                    <p>ambled it to make a type specimen book. It has survived not only five centuries, but als</p>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </section>
 {% endblock %}

@@ -8,15 +8,17 @@
 {% endblock %}
 
 {% block content %}
+{% for Service in Service.all %}
+{% if Service.id == product_id %}
 <section class="flexslider">
     <ul class="slides">
-        <li style="background-image: url(img/slider_1.jpg)" class="overlay">
+        <li style="background-image: url({{Service.sliderImage.url}})" class="overlay">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="probootstrap-slider-text text-center">
                             <h1 class="probootstrap-heading">
-                                {{ Service.category}}
+                                {{ Service.category }}
                             </h1>
                         </div>
                     </div>
@@ -26,6 +28,8 @@
 
     </ul>
 </section>
+{% endif %}
+{% endfor %}
 <section class="probootstrap-section probootstrap-bg-white ">
     <div class="container">
         <div class="row probootstrap-animate">
