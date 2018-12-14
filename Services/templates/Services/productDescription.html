@@ -4,43 +4,41 @@
 
 <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 
-<script src="{% static'js/jqueryscript.js' %}"></script>
+<script src="{% static 'js/jqueryscript.js' %}"></script>
 {% endblock %}
 
 {% block content %}
+<section class="flexslider">
+    <ul class="slides">
+        <li style="background-image: url(img/slider_1.jpg)" class="overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <div class="probootstrap-slider-text text-center">
+                            <h1 class="probootstrap-heading">
+                                {{ Service.category}}
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+
+    </ul>
+</section>
 <section class="probootstrap-section probootstrap-bg-white ">
     <div class="container">
         <div class="row probootstrap-animate">
             <div class="col-lg-8">
-                <img src="img/gal_img_sm_2.jpg" alt="" class="img-fluid thumbnailImage">
-                <div class="post-details" style="margin-top:20px">
-                    <h1 class="blogTitle" style="font-size:40px">Diversity in Engineering: The Effect on Questions</h1>
-                    <div class="post-body">
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                            exercitation
-                            ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                            incididunt ut labore
-                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut
-                            aliquip ex ea commodo consequat.</p>
-                        <p><img class="img-fluid" src="img/gal_img_sm_2.jpg"></p>
-                        <h3 class="blogTitle">Lorem Ipsum Dolor</h3>
-                        <p>div Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda temporibus iusto
-                            voluptates
-                            deleniti similique rerum ducimus sint ex odio saepe. Sapiente quae pariatur ratione
-                            quis perspiciatis
-                            deleniti accusantium</p>
-                        <p>quasi nam. Libero dicta eum recusandae, commodi, ad, autem at ea iusto numquam
-                            veritatis, officiis.
-                            Accusantium optio minus, voluptatem? Quia reprehenderit, veniam quibusdam provident,
-                            fugit iusto
-                            ullam voluptas neque soluta adipisci ad.</p>
-                    </div>
 
+                <img src="{{ Product.detailImage.url }}" alt="" class="img-fluid thumbnailImage">
+                <div class="post-details" style="margin-top:20px">
+                    <h1 class="blogTitle" style="font-size:40px">{{ Product.title }}</h1>
+                    <div class="post-body">
+                        {{ Product.detail | safe}}
+                    </div>
                 </div>
+
             </div>
             <div class="col-lg-4">
                 <div class="categories">
@@ -160,5 +158,5 @@
 
 {% block scripts %}
 
-<script src="{% 'js/blog.js' %}"></script>
+<script src="{% static 'js/blog.js' %}"></script>
 {% endblock %}

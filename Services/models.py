@@ -27,6 +27,8 @@ class Product(models.Model):
     description = RichTextField()
     image1 = models.ImageField(upload_to = "images/", blank = True, help_text = "Optional")
     image2 = models.ImageField(upload_to = "images/", blank = True, help_text = "Optional")
+    detailImage = models.ImageField(upload_to = "images/", default = "")
+    detail = RichTextField(default = "")
     updated = models.DateTimeField(auto_now=True)
     serviceCategory = models.ForeignKey("Service", related_name = "Product", on_delete = models.PROTECT)
     def __str__(self):

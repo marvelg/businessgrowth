@@ -12,7 +12,15 @@
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <div class="probootstrap-slider-text text-center">
-                            <h1 class="probootstrap-heading">General Product</h1>
+                            <h1 class="probootstrap-heading">
+                                {% for Service in Service.all %}
+                                {% if Service.id == product_id %}
+                                
+                                {{ Service.category }}
+                         
+                                {% endif %}
+                                {% endfor %}
+                            </h1>
                         </div>
                     </div>
                 </div>
@@ -51,7 +59,8 @@
         </div>
         <div class="zoom">
             <p class="text-center">
-                <a href="product-description.html" class="btn btn-primary" style="font-size : 20px">Read More</a>
+                <a href="{% url 'productDescription' Service.id Product.id %}" class="btn btn-primary" style="font-size : 20px">Read
+                    More</a>
             </p>
         </div>
 
