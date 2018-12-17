@@ -2,6 +2,9 @@
 {% load staticfiles %}
 {% block links %}
 
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
+<script src="{% static 'js/jqueryscript.js' %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -27,87 +30,66 @@
 </section>
 {% endif %}
 {% endfor %}
-
-
-
-<section class="probootstrap-section probootstrap-bg-white" style="padding:40px">
+<section class="probootstrap-section probootstrap-bg-white ">
     <div class="container">
-        <div class="row mb20">
-            <div class="col-md-10 col-md-offset-1 probootstrap-animate">
-                <h2>{{Product.title}}</h2>
-                <p>{{Product.productDescription | safe}}</p>
+        <div class="row probootstrap-animate">
+            <div class="col-lg-8">
+
+                <img src="{{ Product.detailImage.url }}" alt="" class="img-fluid thumbnailImage">
+                <div class="post-details" style="margin-top:20px">
+                    <h1 class="blogTitle" style="font-size:40px">{{ Product.title }}</h1>
+                    <div class="post-body">
+                        {{ Product.detail | safe}}
+                    </div>
+                </div>
 
             </div>
-        </div>
-        <!-- END row -->
+            <div class="col-lg-4">
+                <div class="categories">
+                    <header>
+                        <h3 class="blogTitle" style="font-size:20px; padding-bottom:8px">Categories</h3>
+                    </header>
+                    <div class="blog-posts">
+                        <ul class="category-list">
+                            <li>
+                                <a href="#">
+                                    <div class="item d-flex align-items-center">
+                                        <div class="title"><strong>Leadership</strong>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="item d-flex align-items-center">
+                                        <div class="title"><strong>Communication</strong>
 
-        <div class="row mb30">
-            <div class="col-md-6">
-                {% if Product.image1 %}
-                <img src="{{ Product.image1.url }}" class="img-responsive">
-                {% endif %}
-            </div>
-            <div class="col-md-6">
-                {% if Product.image2 %}
-                <img src="{{ Product.image2.url }}" class="img-responsive">
-                {% endif %}
-            </div>
-        </div>
-        <div class="zoom">
-            <p class="text-center">
-                <a href="{% url 'serviceProductDescription' product_id product_id %}" class="btn btn-primary" style="font-size : 20px">Read
-                    More</a>
-            </p>
-        </div>
-        {% for Service in Service.all %}
-        {% if Service.id == product_id %}
-        {% for Product in Service.Product.all %}
-        <div class="row mb20">
-            <div class="col-md-10 col-md-offset-1 probootstrap-animate">
-                <h2>{{Product.title}}</h2>
-                <p>{{Product.description | safe}}</p>
-
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="item d-flex align-items-center">
+                                        <div class="title"><strong>Skills</strong>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- END row -->
-
-        <div class="row mb30">
-            <div class="col-md-6">
-                {% if Product.image1 %}
-                <img src="{{ Product.image1.url }}" class="img-responsive">
-                {% endif %}
-            </div>
-            <div class="col-md-6">
-                {% if Product.image2 %}
-                <img src="{{ Product.image2.url }}" class="img-responsive">
-                {% endif %}
-            </div>
-        </div>
-        <div class="zoom">
-            <p class="text-center">
-                <a href="{% url 'productDescription' Service.id Product.id %}" class="btn btn-primary" style="font-size : 20px">Read
-                    More</a>
-            </p>
-        </div>
-        {% endfor %}
-        {% endif %}
-        {% endfor %}
     </div>
 </section>
-
-
-
-
-
-
 <section class="probootstrap-section">
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate">
                 <h2>Why Choose Us</h2>
-                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore
-                    natus
-                    quos quibusdam soluta at.</p>
+                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui
+                    tempore natus quos quibusdam soluta at.</p>
             </div>
         </div>
         <div class="row">
@@ -171,6 +153,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
         <!-- END row -->
     </div>
@@ -178,4 +161,6 @@
 {% endblock %}
 
 {% block scripts %}
+
+<script src="{% static 'js/blog.js' %}"></script>
 {% endblock %}

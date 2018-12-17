@@ -11,8 +11,8 @@ def services(request):
 def product(request, product_id):
     Product_id = product_id
     service = Service.objects
-    products = Product.objects
-    product = get_object_or_404(Product, pk = product_id)
+
+    product = get_object_or_404(Service, pk = product_id)
     return render(request, 'Services/Product.html', {"Product" : product, "Service" : service, "product_id" : Product_id})
 
 def productDescription(request, product_id, productDescription_id):
@@ -20,4 +20,11 @@ def productDescription(request, product_id, productDescription_id):
     service = Service.objects
     productDescription = get_object_or_404(Product, pk = productDescription_id)
     return render(request, 'Services/productDescription.html', {'Product' : productDescription, "Service" : service, "product_id" : Product_id})
+    
+    
+def serviceProductDescription(request, product_id, serviceProductDescription_id):
+    Product_id = product_id
+    service = Service.objects
+    productDescription = get_object_or_404(Service, pk = serviceProductDescription_id)
+    return render(request, 'Services/serviceProductDescription.html', {'Product' : productDescription, "Service" : service, "product_id" : Product_id})
 

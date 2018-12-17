@@ -16,7 +16,12 @@ class Service(models.Model):
     description = models.TextField(max_length = 220, help_text = "Image height = Text height")
     image = models.ImageField(upload_to = "images/", help_text = "Image height = Text height")
     sliderImage = models.ImageField(upload_to = "images/", default = "")
-
+    title = models.CharField(max_length = 50, blank = True)
+    productDescription = RichTextField( blank = True)
+    image1 = models.ImageField(upload_to = "images/", blank = True, help_text = "Optional", default = "")
+    image2 = models.ImageField(upload_to = "images/", blank = True, help_text = "Optional", default = "")
+    detailImage = models.ImageField(upload_to = "images/", default = "", blank = True)
+    detail = RichTextField( blank = True)
     def __str__(self):
         return self.category
 
