@@ -4,11 +4,29 @@
 <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 <script src="{% static 'js/jqueryscript.js' %}"></script>
 <style>
-    
+
 </style>
 {% endblock %}
 
 {% block content %}
+<section class="flexslider">
+        <ul class="slides">
+            {% for Slider in Slider.all%}
+            <li style="background-image: url({{Slider.image.url}})" class="overlay">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div class="probootstrap-slider-text text-center">
+                                <h1 class="probootstrap-heading">{{Slider.text}}</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+    
 <section class="probootstrap-section probootstrap-bg-white ">
     <div class="container">
         <div class="row probootstrap-animate">
@@ -32,27 +50,27 @@
                         {{ Blog.blogBody | safe}}
                     </div>
                     <div class="posts-nav d-flex justify-content-between align-items-stretch flex-column flex-md-row blogpost probootstrap-animate">
-                        
-                        <a href="#" class="prev-post text-left d-flex align-items-center">
+                        {% if Blog.get_previous_by_date %}
+                        <a href="{% url 'Post' Blog.get_previous_by_date.pk %}" class="prev-post text-left d-flex align-items-center">
                             <div class="icon prev ">
                                 <img src="{% static 'img/left-arrow.png' %}" alt="" style="width:12px;height:auto">
                             </div>
                             <div class="text">
                                 <strong class="text-primary">Previous Post </strong>
-                                <h6>I Bought a Wedding Dress.</h6>
+                                <h6>{{Blog.get_previous_by_date.header}}</h6>
                             </div>
                         </a>
-                        
-                        
-                        <a href="#" class="next-post text-right d-flex align-items-center justify-content-end">
+                        {% endif %}
+                        {% if Blog.get_next_by_date %}
+                        <a href="{% url 'Post' Blog.get_next_by_date.pk %}" class="next-post text-right d-flex align-items-center justify-content-end">
                             <div class="text"><strong class="text-primary">Next Post </strong>
-                                <h6>I Bought a Wedding Dress.</h6>
+                                <h6>{{Blog.get_next_by_date.header}}</h6>
                             </div>
                             <div class="icon next">
                                 <img src="{% static 'img/right-arrow.png' %}" alt="" style="width:12px;height:auto">
                             </div>
-                        </a>    
-                        
+                        </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>

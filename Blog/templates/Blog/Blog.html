@@ -62,7 +62,7 @@
                             {% endif %}
                             {% for num in posts.paginator.page_range %}
                                 {% if posts.number == num %}
-                                    <li class="page-item"><a href="?page={{num}}" class="page-link">{{num}}</a></li>
+                                    <li class="page-item"><a href="?page={{num}}" class="page-link active">{{num}}</a></li>
                                 {% elif num > posts.number|add:'-2' and num < posts.number|add:'2' %}
                                     <li class="page-item"><a href="?page={{num}}" class="page-link">{{num}}</a></li>
                                 {% endif %}
@@ -85,5 +85,5 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="{% static 'js/blog.js' %}"></script>
+
 {% endblock %}

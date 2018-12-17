@@ -13,7 +13,7 @@ class Slider(models.Model):
 
 class Blog(models.Model):
     image = models.ImageField(upload_to = "images/")
-    date = models.DateField( default = "", null = True)
+    date = models.DateField(default = "")
     blogCategory = models.CharField(max_length = 60, blank = True)
     header = models.CharField(max_length = 120, default = "")
     blogDescription = models.TextField(blank = True)
