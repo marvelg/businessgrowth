@@ -28,16 +28,16 @@
 <section class="probootstrap-section probootstrap-bg-white ">
     <div class="container">
         <div class="row probootstrap-animate">
-            {% for Blog in Blog.all %}
+            {% for Blog in posts %}
             <div class="blog col-md-6">
-                <a href="{% url 'Post' %}" target="_blank">
+                <a href="{% url 'Post' Blog.id %}" target="_blank">
                     <img src="{{ Blog.image.url }}" alt="" class="img-fluid">
                 </a>
                 <div class="d-flex justify-content-between">
                     <div class="blogDate">{{Blog.properDate}}</div>
                     <div class="blogCategory">{{Blog.blogCategory}}</div>
                 </div>
-                <a href="{% url 'Post' %}" target="_blank">
+                <a href="{% url 'Post' Blog.id %}" target="_blank">
                     <h3 class="blogTitle">{{Blog.header}}</h3>
                 </a>
                 <p class="text-muted blogSummary">{{ Blog.blogDescription}}</p>
@@ -52,13 +52,30 @@
             <div class="col-md-12">
                 <nav aria-label="Page navigation example">
                     <ul class="pagination pagination-template d-flex justify-content-center">
-                        <li class="page-item"><a href="#" class="page-link"> <img src="{% static 'img/left-arrow.png' %}"
-                                    alt="" style="width:12px; height:auto"></a></li>
-                        <li class="page-item"><a href="#" class="page-link">1</a></li>
-                        <li class="page-item"><a href="#" class="page-link">2</a></li>
-                        <li class="page-item"><a href="#" class="page-link">3</a></li>
-                        <li class="page-item"><a href="#" class="page-link"> <img src="{% static 'img/right-arrow.png' %}"
-                                    alt="" style="width:12px; height:auto"></a></li>
+                        <div class="pagination">
+                            {% if posts.has_previous %}
+                            <li class="page-item">
+                                <a href="?page={{posts.previous_page_number}}" class="page-link">
+                                    <img src="{% static 'img/left-arrow.png' %}" alt="" style="width:12px; height:auto">
+                                </a>
+                            </li>
+                            {% endif %}
+                            {% for num in posts.paginator.page_range %}
+                                {% if posts.number == num %}
+                                    <li class="page-item"><a href="?page={{num}}" class="page-link">{{num}}</a></li>
+                                {% elif num > posts.number|add:'-2' and num < posts.number|add:'2' %}
+                                    <li class="page-item"><a href="?page={{num}}" class="page-link">{{num}}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                            {% if posts.has_next %}
+                            <li class="page-item">
+                                <a href="?page={{posts.next_page_number}}" class="page-link">
+                                    <img src="{% static 'img/right-arrow.png' %}" alt="" style="width:12px; height:auto">
+                                </a>
+                            </li>
+                            {% endif %}
+
+                        </div>
                     </ul>
                 </nav>
             </div>

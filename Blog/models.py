@@ -1,5 +1,6 @@
 from django.db import models
 
+from ckeditor.fields import RichTextField
 # Create your models here.
 class Slider(models.Model):
     text = models.CharField(max_length = 120)
@@ -12,13 +13,14 @@ class Slider(models.Model):
 
 class Blog(models.Model):
     image = models.ImageField(upload_to = "images/")
-    date = models.DateField(blank = True, default = "")
-    blogCategory = models.CharField(max_length = 60)
+    date = models.DateField( default = "", null = True)
+    blogCategory = models.CharField(max_length = 60, blank = True)
     header = models.CharField(max_length = 120, default = "")
-    blogDescription = models.TextField()
+    blogDescription = models.TextField(blank = True)
     editorImage = models.ImageField(upload_to = "images/")
-    editor = models.CharField(max_length = 60)
-
+    editor = models.CharField(max_length = 60, blank = True)
+    blogBody = RichTextField(help_text = "subheaders should be header 3", default = "", blank = True)
+    
     def properDate(self):
         return self.date.strftime( '%e %B  %Y' )
 
@@ -26,3 +28,4 @@ class Blog(models.Model):
         return self.header
     class Meta:
         verbose_name_plural = "2. Blogs"
+        ordering = ['-date',]

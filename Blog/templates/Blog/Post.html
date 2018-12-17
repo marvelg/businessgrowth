@@ -3,6 +3,9 @@
 {% block links %}
 <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 <script src="{% static 'js/jqueryscript.js' %}"></script>
+<style>
+    
+</style>
 {% endblock %}
 
 {% block content %}
@@ -10,52 +13,26 @@
     <div class="container">
         <div class="row probootstrap-animate">
             <div class="col-lg-8">
-                <img src="img/gal_img_sm_2.jpg" alt="" class="img-fluid thumbnailImage">
+                <img src="{{ Blog.image.url }}" alt="" class="img-fluid thumbnailImage">
                 <div class="post-details">
                     <div class="d-flex justify-content-between">
-                        <div class="blogCategory">BUSINESS, FINANCIAL</div>
+                        <div class="blogCategory">{{Blog.blogCategory}}</div>
                     </div>
-                    <h1 class="blogTitle" style="font-size:40px">Diversity in Engineering: The Effect on Questions</h1>
+                    <h1 class="blogTitle" style="font-size:40px">{{Blog.header}}</h1>
                     <footer class="d-flex blogFooter align-items-center justify-content-between">
                         <span class="d-flex align-items-center">
-                            <div class="avatar"><img src="img/avatar-1.jpg" class="img-fluid"></div>
-                            <div class="blogEditor">John Doe</div>
+                            <div class="avatar"><img src="{{Blog.editorImage.url}}" class="img-fluid"></div>
+                            <div class="blogEditor">{{ Blog.editor }}</div>
                         </span>
                         <span>
-                            <div class="blogDate postBlogDate">20 May | 2016</div>
+                            <div class="blogDate postBlogDate">{{ Blog.properDate }}</div>
                         </span>
                     </footer>
                     <div class="post-body">
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                            exercitation
-                            ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                            incididunt ut labore
-                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut
-                            aliquip ex ea commodo consequat.</p>
-                        <p><img class="img-fluid" src="img/gal_img_sm_2.jpg"></p>
-                        <h3 class="blogTitle">Lorem Ipsum Dolor</h3>
-                        <p>div Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda temporibus iusto
-                            voluptates
-                            deleniti similique rerum ducimus sint ex odio saepe. Sapiente quae pariatur ratione
-                            quis perspiciatis
-                            deleniti accusantium</p>
-                        <p>quasi nam. Libero dicta eum recusandae, commodi, ad, autem at ea iusto numquam
-                            veritatis, officiis.
-                            Accusantium optio minus, voluptatem? Quia reprehenderit, veniam quibusdam provident,
-                            fugit iusto
-                            ullam voluptas neque soluta adipisci ad.</p>
-                    </div>
-                    <div class="post-tags probootstrap-animate">
-                        <a href="#" class="tag">#Business</a>
-                        <a href="#" class="tag">#Tricks</a>
-                        <a href="#" class="tag">#Financial</a>
-                        <a href="#" class="tag">#Economy</a>
+                        {{ Blog.blogBody | safe}}
                     </div>
                     <div class="posts-nav d-flex justify-content-between align-items-stretch flex-column flex-md-row blogpost probootstrap-animate">
+                        
                         <a href="#" class="prev-post text-left d-flex align-items-center">
                             <div class="icon prev ">
                                 <img src="{% static 'img/left-arrow.png' %}" alt="" style="width:12px;height:auto">
@@ -65,6 +42,8 @@
                                 <h6>I Bought a Wedding Dress.</h6>
                             </div>
                         </a>
+                        
+                        
                         <a href="#" class="next-post text-right d-flex align-items-center justify-content-end">
                             <div class="text"><strong class="text-primary">Next Post </strong>
                                 <h6>I Bought a Wedding Dress.</h6>
@@ -72,7 +51,8 @@
                             <div class="icon next">
                                 <img src="{% static 'img/right-arrow.png' %}" alt="" style="width:12px;height:auto">
                             </div>
-                        </a>
+                        </a>    
+                        
                     </div>
                 </div>
             </div>
@@ -81,43 +61,17 @@
                     <header>
                         <h3 class="blogTitle" style="font-size:16px">Latest Posts</h3>
                     </header>
+                    {% for Blog in posts|slice:":3" %}
                     <div class="blog-posts">
-                        <a href="#">
+                        <a href="{% url 'Post' Blog.id %}">
                             <div class="item d-flex align-items-center">
-                                <div class="image"><img src="img/gal_img_full_3.jpg" alt="..." class="img-fluid"></div>
-                                <div class="title"><strong>Alberto Savoia Can Teach You About</strong>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="item d-flex align-items-center">
-                                <div class="image"><img src="img/gal_img_sm_2.jpg" alt="..." class="img-fluid"></div>
-                                <div class="title"><strong>Alberto Savoia Can Teach You About</strong>
-
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="item d-flex align-items-center">
-                                <div class="image"><img src="img/gal_img_sm_2.jpg" alt="..." class="img-fluid"></div>
-                                <div class="title"><strong>Alberto Savoia Can Teach You About</strong>
-
+                                <div class="image"><img src="{{Blog.image.url}}" alt="..." class="img-fluid"></div>
+                                <div class="title"><strong>{{Blog.header}}</strong>
                                 </div>
                             </div>
                         </a>
                     </div>
-                </div>
-                <div class="widget tags">
-                    <header>
-                        <h3 class="blogTitle" style="font-size:16px">Tags</h3>
-                    </header>
-                    <ul class="list-inline">
-                        <li class="list-inline-item"><a href="#" class="tag">#Business</a></li>
-                        <li class="list-inline-item"><a href="#" class="tag">#Technology</a></li>
-                        <li class="list-inline-item"><a href="#" class="tag">#Fashion</a></li>
-                        <li class="list-inline-item"><a href="#" class="tag">#Sports</a></li>
-                        <li class="list-inline-item"><a href="#" class="tag">#Economy</a></li>
-                    </ul>
+                    {% endfor %}
                 </div>
             </div>
         </div>
