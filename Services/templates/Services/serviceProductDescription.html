@@ -25,7 +25,6 @@
                 </div>
             </div>
         </li>
-
     </ul>
 </section>
 {% endif %}
@@ -45,37 +44,22 @@
 
             </div>
             <div class="col-lg-4">
-                <div class="categories">
+                <div class="categories probootstrap-animate">
                     <header>
                         <h3 class="blogTitle" style="font-size:20px; padding-bottom:8px">Categories</h3>
                     </header>
                     <div class="blog-posts">
                         <ul class="category-list">
+                            {% for Service in Service.all %}
                             <li>
-                                <a href="#">
+                                <a href="{% url 'Product' Service.id %}">
                                     <div class="item d-flex align-items-center">
-                                        <div class="title"><strong>Leadership</strong>
+                                        <div class="title"><strong>{{ Service.category }}</strong>
                                         </div>
                                     </div>
                                 </a>
                             </li>
-                            <li>
-                                <a href="#">
-                                    <div class="item d-flex align-items-center">
-                                        <div class="title"><strong>Communication</strong>
-
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="item d-flex align-items-center">
-                                        <div class="title"><strong>Skills</strong>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
+                            {% endfor %}
                         </ul>
                     </div>
                 </div>
