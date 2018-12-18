@@ -72,72 +72,20 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate">
                 <h2>Why Choose Us</h2>
-                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui
-                    tempore natus quos quibusdam soluta at.</p>
             </div>
         </div>
         <div class="row">
+            {% for whyChooseUs in whyChooseUs.all %}
             <div class="col-md-6">
                 <div class="service left-icon probootstrap-animate">
-                    <div class="icon"><img src="img/library.png" style="width:50px; height:auto" alt=""></div>
+                    <div class="icon"><img src="{{ whyChooseUs.iconImage.url }}" style="width:50px; height:auto" alt=""></div>
                     <div class="text">
-                        <h3>Consectetur Adipisicing</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore
-                            natus quos quibusdam soluta at.</p>
+                        <h3>{{ whyChooseUs.subHeader }}</h3>
+                        <p>{{ whyChooseUs.description }}</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="service left-icon probootstrap-animate">
-                    <div class="icon"><img src="img/presentation.png" style="width:50px; height:auto" alt=""></div>
-                    <div class="text">
-                        <h3>Laboriosam Quod Dignissimos</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore
-                            natus quos quibusdam soluta at.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="service left-icon probootstrap-animate">
-                    <div class="icon"><img src="img/library.png" style="width:50px; height:auto" alt=""></div>
-                    <div class="text">
-                        <h3>Consectetur Adipisicing</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore
-                            natus quos quibusdam soluta at.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="service left-icon probootstrap-animate">
-                    <div class="icon"><img src="img/presentation.png" style="width:50px; height:auto" alt=""></div>
-                    <div class="text">
-                        <h3>Laboriosam Quod Dignissimos</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore
-                            natus quos quibusdam soluta at.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="service left-icon probootstrap-animate">
-                    <div class="icon"><img src="img/library.png" style="width:50px; height:auto" alt=""></div>
-                    <div class="text">
-                        <h3>Consectetur Adipisicing</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore
-                            natus quos quibusdam soluta at.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="service left-icon probootstrap-animate">
-                    <div class="icon"><img src="img/presentation.png" style="width:50px; height:auto" alt=""></div>
-                    <div class="text">
-                        <h3>Laboriosam Quod Dignissimos</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore
-                            natus quos quibusdam soluta at.</p>
-                    </div>
-                </div>
-            </div>
-
+            {% endfor %}
         </div>
         <!-- END row -->
     </div>

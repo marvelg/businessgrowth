@@ -8,6 +8,7 @@ from .models import Client
 from .models import Testimonial
 from .models import internationalPartner
 from Services.models import Service
+from Footer.models import whyChooseUs
 # Create your views here.
 def home(request):
     welcome = Welcome.objects
@@ -18,7 +19,8 @@ def home(request):
     client = Client.objects
     testimonial = Testimonial.objects
     internationalpartner = internationalPartner.objects
-    return render(request, 'Home/Home.html', {"Welcome": welcome, "Slider" : slider, "bestService" : bestservice, "Service": service, "Founder" : founder, "Client" : client, "Testimonial" : testimonial, "internationalPartner" : internationalpartner})
+    whychooseus = whyChooseUs.objects
+    return render(request, 'Home/Home.html', {"Welcome": welcome, "Slider" : slider, "bestService" : bestservice, "Service": service, "Founder" : founder, "Client" : client, "Testimonial" : testimonial, "internationalPartner" : internationalpartner, "whyChooseUs" : whychooseus})
 
 def bio(request, Founder_id):
     founder = get_object_or_404(Founder, pk = Founder_id)

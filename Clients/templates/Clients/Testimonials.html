@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block links %}
-
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -25,7 +25,7 @@
 
 <section class="probootstrap-section probootstrap-bg-white">
     <div class="container">
-        {% for Testimonial in Testimonial.all %}
+        {% for Testimonial in Testimonial %}
         <div class="row probootstrap-animate">
             <div class="col-md-12">
                 <div class="testimonial">
@@ -35,6 +35,61 @@
             </div>
         </div>
         {% endfor %}
+        <div class="row probootstrap-animate">
+            <div class="col-md-12">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination pagination-template d-flex justify-content-center">
+                        <div class="pagination">
+                            {% if Testimonial.has_previous %}
+                            <li class="page-item">
+                                <a href="?page={{Testimonial.previous_page_number}}" class="page-link">
+                                    <img src="{% static 'img/left-arrow.png' %}" alt="" style="width:12px; height:auto">
+                                </a>
+                            </li>
+                            {% endif %}
+                            {% for num in Testimonial.paginator.page_range %}
+                            {% if Testimonial.number == num %}
+                            <li class="page-item"><a href="?page={{num}}" class="page-link active">{{num}}</a></li>
+                            {% elif num > Testimonial.number|add:'-3' and num < Testimonial.number|add:'3' %} <li class="page-item"><a
+                                    href="?page={{num}}" class="page-link">{{num}}</a></li>
+                                {% endif %}
+                                {% endfor %}
+                                {% if Testimonial.has_next %}
+                                <li class="page-item">
+                                    <a href="?page={{Testimonial.next_page_number}}" class="page-link">
+                                        <img src="{% static 'img/right-arrow.png' %}" alt="" style="width:12px; height:auto">
+                                    </a>
+                                </li>
+                                {% endif %}
+
+                        </div>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="probootstrap-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate">
+                <h2>Why Choose Us</h2>
+            </div>
+        </div>
+        <div class="row">
+            {% for whyChooseUs in whyChooseUs.all %}
+            <div class="col-md-6">
+                <div class="service left-icon probootstrap-animate">
+                    <div class="icon"><img src="{{ whyChooseUs.iconImage.url }}" style="width:50px; height:auto" alt=""></div>
+                    <div class="text">
+                        <h3>{{ whyChooseUs.subHeader }}</h3>
+                        <p>{{ whyChooseUs.description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- END row -->
     </div>
 </section>
 {% endblock %}
