@@ -11,10 +11,10 @@ def blog(request):
 
     slider = Slider.objects
 
-    return render(request, 'Blog/Blog.html', {"Slider":slider, "posts" : posts})
+    return render(request, 'Blog/Blog.html', {"Slider":slider, "posts" : posts, "blog_page" : "active"})
 
 def post(request, blog_id):
     slider = Slider.objects
     posts = Blog.objects.all()
     post = get_object_or_404(Blog, pk = blog_id)
-    return render(request, 'Blog/Post.html', {"Blog" : post, "posts" : posts, "Slider":slider})
+    return render(request, 'Blog/Post.html', {"Blog" : post, "posts" : posts, "Slider":slider, "blog_page" : "active"})

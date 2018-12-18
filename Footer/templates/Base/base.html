@@ -34,19 +34,19 @@
 
             <div id="navbar-collapse" class="navbar-collapse collapse headnavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{% url 'Home' %}">Home</a></li>
-                    <li><a href="{% url 'Services' %}">Services</a></li>
-                    <li><a href="{% url 'About' %}">About</a></li>
-                    <li><a href="{% url 'Gallery' %}">Gallery</a></li>
-                    <li><a href="{% url 'Blog' %}">Blog</a></li>
-                    <li class="dropdown">
+                    <li class = {{home_page}}><a href="{% url 'Home' %}">Home</a></li>
+                    <li class = {{service_page}}><a href="{% url 'Services' %}">Services</a></li>
+                    <li class = {{about_page}}><a href="{% url 'About' %}">About</a></li>
+                    <li class = {{gallery_page}}><a href="{% url 'Gallery' %}">Gallery</a></li>
+                    <li class = {{blog_page}}><a href="{% url 'Blog' %}">Blog</a></li>
+                    <li class="dropdown {{clients_page}}">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Clients</a>
                         <ul class="dropdown-menu">
                             <li><a href="{% url 'Clients' %}">Client List</a></li>
                             <li><a href="{% url 'Testimonials' %}">Testimonials</a></li>
                         </ul>
                     </li>
-                    <li><a href="{% url 'Contact' %}">Contact</a></li>
+                    <li class = {{contact_page}}><a href="{% url 'Contact' %}">Contact</a></li>
                 </ul>
             </div>
         </div>

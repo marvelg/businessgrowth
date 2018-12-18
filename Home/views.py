@@ -20,7 +20,7 @@ def home(request):
     testimonial = Testimonial.objects
     internationalpartner = internationalPartner.objects
     whychooseus = whyChooseUs.objects
-    return render(request, 'Home/Home.html', {"Welcome": welcome, "Slider" : slider, "bestService" : bestservice, "Service": service, "Founder" : founder, "Client" : client, "Testimonial" : testimonial, "internationalPartner" : internationalpartner, "whyChooseUs" : whychooseus})
+    return render(request, 'Home/Home.html', {"Welcome": welcome, "Slider" : slider, "bestService" : bestservice, "Service": service, "Founder" : founder, "Client" : client, "Testimonial" : testimonial, "internationalPartner" : internationalpartner, "whyChooseUs" : whychooseus, "home_page" : "active"})
 
 def bio(request, Founder_id):
     founder = get_object_or_404(Founder, pk = Founder_id)

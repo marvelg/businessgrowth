@@ -7,5 +7,5 @@ def gallery(request):
     slider = Slider.objects
     gallery = Gallery.objects
     certificate = Certificate.objects
-    return render(request, "Gallery/Gallery.html", {"Gallery" : gallery, "Certificate" : certificate, "Slider" : slider})
+    return render(request, "Gallery/Gallery.html", {"Gallery" : gallery, "Certificate" : certificate, "Slider" : slider, "gallery_page" : "active"})
 

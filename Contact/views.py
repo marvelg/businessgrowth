@@ -52,4 +52,4 @@ def contact(request):
             email.send()
             return render(request, "Contact/Contact.html", {"Contact" : contact, "Slider" : slider, "form" : form_class})
             
-    return render(request, "Contact/Contact.html", {"Contact" : contact, "Slider" : slider, "whyChooseUs" : whychooseus, "form" : form_class})
+    return render(request, "Contact/Contact.html", {"Contact" : contact, "Slider" : slider, "whyChooseUs" : whychooseus, "form" : form_class, "contact_page" : "active"})
