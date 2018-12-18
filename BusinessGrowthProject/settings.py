@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
 ]
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
 MIDDLEWARE = [

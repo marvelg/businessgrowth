@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 import Home.views
 import About.views
 import Clients.views
-import Contact.views
+
 import Gallery.views
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,7 +29,7 @@ urlpatterns = [
     path('blog/', include('Blog.urls')),
     path('clients/', Clients.views.clients, name = "Clients"),
     path('testimonials/', Clients.views.testimonials, name = "Testimonials"),
-    path('contact/', Contact.views.contact, name = "Contact"),
+    path('contact/', include('Contact.urls')),
     path('gallery/', Gallery.views.gallery, name = "Gallery"),
     path('services/', include('Services.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),

@@ -12,7 +12,7 @@ class Slider(models.Model):
         verbose_name_plural = "1. Slider"
 
 class Service(models.Model):
-    category = models.CharField(max_length = 30, help_text = "amount of categories has to be less than or equal to amount of products")
+    category = models.CharField(max_length = 50, help_text = "amount of categories has to be less than or equal to amount of products")
     description = models.TextField(max_length = 220, help_text = "Image height = Text height")
     image = models.ImageField(upload_to = "images/", help_text = "Image height = Text height")
     sliderImage = models.ImageField(upload_to = "images/", default = "")
@@ -22,6 +22,11 @@ class Service(models.Model):
     image2 = models.ImageField(upload_to = "images/", blank = True, help_text = "Optional", default = "")
     detailImage = models.ImageField(upload_to = "images/", default = "", blank = True)
     detail = RichTextField( blank = True)
+
+    def exactCategory(self):
+        category = self.category
+        return category.replace(" ", "").upper()
+
     def __str__(self):
         return self.category
 

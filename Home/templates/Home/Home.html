@@ -51,23 +51,28 @@
         <!-- END row -->
         <div class="row">
             {% for bestService in bestService.all %}
+            {% for Service in Service.all %}
+            {% if Service.exactCategory == bestService.Category %}
+
             <div class="col-md-6">
-                <a href="product.html" class="productLink">
+                <a href="{% url 'Product' Service.id %}" class="productLink">
                     <div class="zoom">
                         <div class="probootstrap-service-2 probootstrap-animate">
                             <div class="image">
                                 <div class="image-bg">
-                                    <img src="{{ bestService.image.url }}" alt="">
+                                    <img src="{{ Service.image.url }}" alt="">
                                 </div>
                             </div>
                             <div class="text">
-                                <h3>{{ bestService.title }}</h3>
-                                <p>{{ bestService.description }}</p>
+                                <h3>{{ Service.category }}</h3>
+                                <p>{{ Service.description }}</p>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
+            {% endif %}
+            {% endfor %}
             {% endfor %}
         </div>
         <div class="row">
@@ -231,7 +236,7 @@
                                     <span>{{ Testimonial.position }}</span>
                                 </cite>
                             </blockquote>
-                        </div>   
+                        </div>
                     </div>
                     {% endfor %}
                 </div>

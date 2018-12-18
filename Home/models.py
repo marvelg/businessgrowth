@@ -12,7 +12,7 @@ class Slider(models.Model):
         verbose_name_plural = "1. Slider"
 
 class Welcome(models.Model):
-    title = models.CharField(max_length = 120, default = "Title goes here")
+    title = models.CharField(max_length = 120, default = " ")
     subTitle = models.CharField(max_length = 400, blank = True)
     image = models.ImageField(upload_to = "images/")
     text = RichTextField()
@@ -25,12 +25,14 @@ class Welcome(models.Model):
 
 
 class bestService(models.Model):
-    title = models.CharField(max_length = 30)
-    description = models.TextField(max_length = 220, help_text = "Image height = Text height")
-    image = models.ImageField(upload_to = "images/", help_text = "Image height = Text height")
+    exactCategoryName = models.CharField(max_length = 120, help_text = "Category Name", blank = True, default = " ")
     
+    def Category(self):
+        exactCategoryName = self.exactCategoryName
+        return exactCategoryName.replace(" ", "").upper()
+
     def __str__(self):
-        return self.title
+        return self.exactCategoryName
 
     class Meta:
         verbose_name_plural = "3. bestServices"

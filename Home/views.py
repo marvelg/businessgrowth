@@ -7,17 +7,18 @@ from .models import Founder
 from .models import Client
 from .models import Testimonial
 from .models import internationalPartner
-
+from Services.models import Service
 # Create your views here.
 def home(request):
     welcome = Welcome.objects
     slider = Slider.objects
     bestservice = bestService.objects
+    service = Service.objects
     founder = Founder.objects
     client = Client.objects
     testimonial = Testimonial.objects
     internationalpartner = internationalPartner.objects
-    return render(request, 'Home/Home.html', {"Welcome": welcome, "Slider" : slider, "bestService" : bestservice, "Founder" : founder, "Client" : client, "Testimonial" : testimonial, "internationalPartner" : internationalpartner})
+    return render(request, 'Home/Home.html', {"Welcome": welcome, "Slider" : slider, "bestService" : bestservice, "Service": service, "Founder" : founder, "Client" : client, "Testimonial" : testimonial, "internationalPartner" : internationalpartner})
 
 def bio(request, Founder_id):
     founder = get_object_or_404(Founder, pk = Founder_id)
