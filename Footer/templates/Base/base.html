@@ -37,9 +37,15 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class = {{home_page}}><a href="{% url 'Home' %}">Home</a></li>
                     <li class = {{service_page}}><a href="{% url 'Services' %}">Services</a></li>
-                    <li class = {{about_page}}><a href="{% url 'About' %}">About</a></li>
-                    <li class = {{gallery_page}}><a href="{% url 'Gallery' %}">Gallery</a></li>
+                    <li class = {{about_page}}><a href="{% url 'About' %}">About</a></li>    
                     <li class = {{blog_page}}><a href="{% url 'Blog' %}">Blog</a></li>
+                    <li class="dropdown {{gallery_page}}">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Gallery</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{% url 'Images' %}">Images</a></li>
+                            <li><a href="{% url 'Videos' %}">Videos</a></li>
+                        </ul>
+                    </li>
                     <li class="dropdown {{clients_page}}">
                         <a href="#" data-toggle="dropdown" class="dropdown-toggle">Clients</a>
                         <ul class="dropdown-menu">

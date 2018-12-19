@@ -30,7 +30,8 @@ urlpatterns = [
     path('clients/', Clients.views.clients, name = "Clients"),
     path('testimonials/', Clients.views.testimonials, name = "Testimonials"),
     path('contact/', include('Contact.urls')),
-    path('gallery/', Gallery.views.gallery, name = "Gallery"),
+    path('images/', Gallery.views.gallery, name = "Images"),
+    path('videos/', Gallery.views.videos, name = "Videos"),
     path('services/', include('Services.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 

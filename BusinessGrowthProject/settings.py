@@ -81,7 +81,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'Footer.context_processors.add_variable_to_context'
+                'Footer.context_processors.add_variable_to_context',
+                'django.template.context_processors.media',
             ],
         },
     },
