@@ -12,6 +12,7 @@ class Slider(models.Model):
         verbose_name_plural = "1. Slider"
 
 class Blog(models.Model):
+    updated = models.DateTimeField(auto_now_add = True, null = True)
     image = models.ImageField(upload_to = "images/")
     date = models.DateField(default = "")
     blogCategory = models.CharField(max_length = 60, blank = True)
