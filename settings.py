@@ -24,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'v8*+4g%sd@u89z*3un7$9*98bzok#_-n260_g(0xp=4or8qmkc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['bg.studilmu.com']
 
 
 # Application definition
@@ -97,12 +97,12 @@ WSGI_APPLICATION = 'BusinessGrowthProject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'businessgrowth',
-        'USER':'postgres',
-        'PASSWORD':'marvel',
-        'HOST':'localhost',
-        'PORT':'5432',
+        'USER':'marvel',
+        'PASSWORD':'mArVeL@BGSI$',
+        'HOST':'mystudilmudb.coatf6ogdkrw.ap-southeast-1.rds.amazonaws.com',
+        'PORT':'3306',
     }
 }
 
@@ -152,8 +152,3 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-
-try:
-    from local_settings import *
-except ImportError:
-    pass

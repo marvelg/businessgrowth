@@ -50,6 +50,7 @@ def contact(request):
                 headers = {'Reply-To': contact_email }
             )
             email.send()
-            return render(request, "Contact/Contact.html", {"Contact" : contact, "Slider" : slider, "form" : form_class})
+            response = "Thank you for your message!"
+            return render(request, "Contact/Contact.html", {"Contact" : contact, "Slider" : slider, "whyChooseUs" : whychooseus, "form" : form_class, "contact_page" : "active", "message" : response})
             
     return render(request, "Contact/Contact.html", {"Contact" : contact, "Slider" : slider, "whyChooseUs" : whychooseus, "form" : form_class, "contact_page" : "active"})

@@ -16,4 +16,4 @@ def videos(request):
     slider = videosSlider.objects
     video = Video.objects
     whychooseus = whyChooseUs.objects
-    return render(request, "Gallery/Videos.html", {"videosSlider" : slider,"Video": video, "whyChooseUs" : whychooseus})
+    return render(request, "Gallery/Videos.html", {"videosSlider" : slider,"Video": video, "whyChooseUs" : whychooseus, "gallery_page" : "active"})
