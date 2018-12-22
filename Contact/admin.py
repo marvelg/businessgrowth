@@ -11,4 +11,4 @@ class Static(admin.ModelAdmin):
         return False
         
 admin.site.register(Slider)
-admin.site.register(Contact, Static)
+admin.site.register(Contact)

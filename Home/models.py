@@ -14,7 +14,7 @@ class Slider(models.Model):
 class Welcome(models.Model):
     title = models.CharField(max_length = 120, default = " ")
     subTitle = models.CharField(max_length = 400, blank = True)
-    image = models.ImageField(upload_to = "images/")
+    image = models.ImageField(upload_to = "images/", blank = True, null = True)
     text = RichTextField()
 
     def __str__(self):

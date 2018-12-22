@@ -14,5 +14,5 @@ class Static(admin.ModelAdmin):
 
 admin.site.register(whyChooseUs)
 admin.site.register(Link)
-admin.site.register(Address, Static)
+admin.site.register(Address)
 admin.site.register(Detail)

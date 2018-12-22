@@ -15,11 +15,10 @@ class Static(admin.ModelAdmin):
     def has_delete_permission(self, request, obj=None):
         return False
 
-
-admin.site.register(Welcome, Static)
+admin.site.register(Welcome)
 admin.site.register(Slider)
 admin.site.register(bestService)
-admin.site.register(Founder, Static)
+admin.site.register(Founder)
 admin.site.register(Client)
 admin.site.register(Testimonial)
 admin.site.register(internationalPartner)
