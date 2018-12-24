@@ -5,9 +5,10 @@
 {% endblock %}
 
 {% block content %}
-{% for Slider in Slider.all %}
+
 <section class="flexslider">
     <ul class="slides">
+        {% for Slider in Slider.all %}
         <li style="background-image: url({{Slider.image.url}})" class="overlay">
             <div class="container">
                 <div class="row">
@@ -19,10 +20,10 @@
                 </div>
             </div>
         </li>
-
+        {% endfor %}
     </ul>
 </section>
-{% endfor %}
+
 <section class="probootstrap-section probootstrap-bg-white">
     <div class="container">
         {% for Segment in Segment.all %}
