@@ -8,3 +8,5 @@ def about(request):
     slider = Slider.objects
     whychooseus = whyChooseUs.objects
     return render(request, 'About/About.html', {"Segment" : segment, "Slider": slider, "whyChooseUs" : whychooseus, "about_page" : "active"})
+
+    

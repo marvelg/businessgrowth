@@ -3,8 +3,8 @@ from .models import Segment
 from .models import Slider
 # Register your models here.
 class showCreated(admin.ModelAdmin):
-    list_display = ('title', 'created', 'updated')
-    list_filter = ('created', "updated")
+    list_display = ('title', 'created')
+    list_filter = ('created',)
 
 
 admin.site.register(Segment, showCreated)

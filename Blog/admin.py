@@ -5,6 +5,6 @@ from .models import Blog
 class showUpdated(admin.ModelAdmin):
     list_display = ('header', 'updated')
     list_filter = ['updated']
-
+    
 admin.site.register(Slider)
 admin.site.register(Blog, showUpdated)
