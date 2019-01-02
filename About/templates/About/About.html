@@ -26,20 +26,26 @@
 
 <section class="probootstrap-section probootstrap-bg-white">
     <div class="container">
-        {% for Segment in Segment.all %}
         <div class="row">
-            <div class="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate">
-                <h2>{{ Segment.title }}</h2>
-            </div>
-        </div>
-        <!-- END row -->
-        <div class="row mb40">
-            <div class="col-md-10 probootstrap-animate col-md-offset-1">
-                <p>{{ Segment.content | safe }}</p>
-            </div>
+            {% for Segment in Segment.all %}
+            <div class="col-md-12">
 
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate">
+                        <h2>{{ Segment.title }}</h2>
+                    </div>
+                </div>
+                <!-- END row -->
+                <div class="row mb40">
+                    <div class="col-md-10 probootstrap-animate col-md-offset-1">
+                        <p>{{ Segment.content | safe }}</p>
+                    </div>
+
+                </div>
+
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
         <!-- END row -->
     </div>
 </section>
