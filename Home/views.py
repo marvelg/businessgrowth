@@ -24,4 +24,5 @@ def home(request):
 
 def bio(request, Founder_id):
     founder = get_object_or_404(Founder, pk = Founder_id)
-    return render(request, 'Home/Bio.html', {"Founder" : founder})
+    whychooseus = whyChooseUs.objects
+    return render(request, 'Home/Bio.html', {"Founder" : founder, "whyChooseUs" : whychooseus})
