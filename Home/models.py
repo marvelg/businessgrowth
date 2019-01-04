@@ -4,7 +4,7 @@ from ckeditor.fields import RichTextField
 # Create your models here.
 class Slider(models.Model):
     text = models.CharField(max_length = 120)
-    image = models.ImageField(upload_to = "images/", blank = True, null = True)
+    image = models.ImageField(upload_to = "images/")
     
     def __str__(self):
         return self.text
@@ -14,7 +14,7 @@ class Slider(models.Model):
 class Welcome(models.Model):
     title = models.CharField(max_length = 120, default = " ")
     subTitle = models.CharField(max_length = 400, blank = True)
-    image = models.ImageField(upload_to = "images/")
+    image = models.ImageField(upload_to = "images/", blank = True, default = " ")
     text = RichTextField()
 
     def __str__(self):
@@ -39,7 +39,7 @@ class bestService(models.Model):
 
 class Founder(models.Model):
     name = models.CharField(max_length = 30)
-    image = models.ImageField(upload_to = "images/", default = "", blank = True, null = True)
+    image = models.ImageField(upload_to = "images/", default = "")
     position = models.CharField(max_length = 100)
     description = models.TextField(blank = True)
     email = models.EmailField(blank = True)
@@ -52,7 +52,7 @@ class Founder(models.Model):
 
 class Client(models.Model):
     imageTitle = models.CharField(max_length = 40, default = " ")
-    image = models.ImageField(upload_to = "images/", help_text = "max height = 80px", blank = True, null = True)
+    image = models.ImageField(upload_to = "images/", help_text = "max height = 80px")
 
     def __str__(self):
         return self.imageTitle
@@ -62,7 +62,7 @@ class Client(models.Model):
 
 
 class Testimonial(models.Model):
-    image = models.ImageField(upload_to = "images/", blank = True, null = True)
+    image = models.ImageField(upload_to = "images/")
     testimonial = models.TextField(help_text = "No Quotes Needed")
     name = models.CharField(max_length = 30, blank = True)
     position = models.CharField(max_length = 120, blank = True)
@@ -75,7 +75,7 @@ class Testimonial(models.Model):
 
 class internationalPartner(models.Model):
     imageTitle = models.CharField(max_length = 40, default = " ")
-    image = models.ImageField(upload_to = "images/", blank = True, null = True)
+    image = models.ImageField(upload_to = "images/")
 
     def __str__(self):
         return self.imageTitle
