@@ -20,8 +20,9 @@ class Service(models.Model):
     productDescription = RichTextField( blank = True)
     image1 = models.ImageField(upload_to = "images/", blank = True, help_text = "Optional", default = "")
     image2 = models.ImageField(upload_to = "images/", blank = True, help_text = "Optional", default = "")
-    detailImage = models.ImageField(upload_to = "images/", default = "", blank = True)
+    detailImage = models.ImageField(upload_to = "images/", blank = True, null = True)
     detail = RichTextField( blank = True)
+    
 
     def exactCategory(self):
         category = self.category
@@ -32,7 +33,7 @@ class Service(models.Model):
 
     class Meta:
         verbose_name_plural = "2. serviceCategory"
-
+        
 class Product(models.Model):
     title = models.CharField(max_length = 50, blank = True)
     description = RichTextField( blank = True)
