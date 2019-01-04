@@ -20,7 +20,7 @@ class Service(models.Model):
     productDescription = RichTextField( blank = True)
     image1 = models.ImageField(upload_to = "images/", blank = True, help_text = "Optional", default = "")
     image2 = models.ImageField(upload_to = "images/", blank = True, help_text = "Optional", default = "")
-    detailImage = models.ImageField(upload_to = "images/", blank = True, null = True)
+    detailImage = models.ImageField(upload_to = "images/", null = True)
     detail = RichTextField( blank = True)
     
 
