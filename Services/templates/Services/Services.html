@@ -35,15 +35,22 @@
             </div>
         </div>
         <!-- END row -->
-        <div class="row" >
+        <div class="row" style="
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display:         flex;
+        flex-wrap: wrap;">
             {% for Service in Service.all %}
-            <div class="col-md-6" >
+            <div class="col-md-6" style='
+            display: flex;
+            flex-direction: column;'>
                 <a href="{% url 'Product' Service.id %}" class="productLink">
                     <div class="zoom">
                         <div class="probootstrap-service-2 probootstrap-animate">
                             <div class="image">
                                 <div class="image-bg">
-                                    <img src="{{ Service.image.url }}" alt="" >
+                                    <img src="{{ Service.image.url }}" alt="">
                                 </div>
                             </div>
                             <div class="text">
