@@ -49,12 +49,19 @@
             </div>
         </div>
         <!-- END row -->
-        <div class="row">
+        <div class="row" style="
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display:         flex;
+        flex-wrap: wrap;">
             {% for bestService in bestService.all %}
             {% for Service in Service.all %}
             {% if Service.exactCategory == bestService.Category %}
 
-            <div class="col-md-6">
+            <div class="col-md-6" style='
+            display: flex;
+            flex-direction: column;'>
                 <a href="{% url 'Product' Service.id %}" class="productLink">
                     <div class="zoom">
                         <div class="probootstrap-service-2 probootstrap-animate">
