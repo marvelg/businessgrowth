@@ -1,7 +1,9 @@
 {% extends 'base.html'%}
 {% load staticfiles %}
 {% block links %}
-
+<style>
+    img{max-width : 100%; height : Auto !important;}
+</style>
 {% endblock %}
 
 {% block content %}
@@ -37,7 +39,7 @@
                 </div>
                 <!-- END row -->
                 <div class="row mb40">
-                    <div class="col-md-10 probootstrap-animate col-md-offset-1">
+                    <div class="col-md-10 probootstrap-animate col-md-offset-1" >
                         <p>{{ Segment.content | safe }}</p>
                     </div>
 
