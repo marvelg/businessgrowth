@@ -76,16 +76,9 @@
                 <h2>Why Choose Us</h2>
             </div>
         </div>
-        <div class="row" style="
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display:         flex;
-        flex-wrap: wrap;">
+        <div class="row" >
             {% for whyChooseUs in whyChooseUs.all %}
-            <div class="col-md-6" style='
-            display: flex;
-            flex-direction: column;'>
+            <div class="col-md-6" >
                 <div class="service left-icon probootstrap-animate">
                     <div class="icon"><img src="{{ whyChooseUs.iconImage.url }}" style="width:50px; height:auto" alt=""></div>
                     <div class="text">
